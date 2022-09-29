@@ -3,8 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/SCHOOL/TI S1 UNIVERSITAS DIAN NUSWANTORO SEMARANG/Semester 3/Pemrograman Perangkat Bergerak/Pem-PB2022/01BasicApplication/app/src/main/res/drawable/frame01.xml" value="0.128" />
+        <entry key="..\:/SCHOOL/TI S1 UNIVERSITAS DIAN NUSWANTORO SEMARANG/Semester 3/Pemrograman Perangkat Bergerak/Pem-PB2022/01BasicApplication/app/src/main/res/drawable/gradasi01.xml" value="0.128" />
+        <entry key="..\:/SCHOOL/TI S1 UNIVERSITAS DIAN NUSWANTORO SEMARANG/Semester 3/Pemrograman Perangkat Bergerak/Pem-PB2022/01BasicApplication/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.128" />
         <entry key="..\:/SCHOOL/TI S1 UNIVERSITAS DIAN NUSWANTORO SEMARANG/Semester 3/Pemrograman Perangkat Bergerak/Pem-PB2022/01BasicApplication/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/SCHOOL/TI S1 UNIVERSITAS DIAN NUSWANTORO SEMARANG/Semester 3/Pemrograman Perangkat Bergerak/Pem-PB2022/01BasicApplication/app/src/main/res/layout/activity_main2.xml" value="0.4289245982694685" />
+        <entry key="..\:/SCHOOL/TI S1 UNIVERSITAS DIAN NUSWANTORO SEMARANG/Semester 3/Pemrograman Perangkat Bergerak/Pem-PB2022/01BasicApplication/app/src/main/res/layout/activity_main3.xml" value="0.25" />
+        <entry key="..\:/SCHOOL/TI S1 UNIVERSITAS DIAN NUSWANTORO SEMARANG/Semester 3/Pemrograman Perangkat Bergerak/Pem-PB2022/01BasicApplication/app/src/main/res/layout/activity_main4.xml" value="0.25" />
       </map>
     </option>
   </component>

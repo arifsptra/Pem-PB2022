@@ -79,6 +79,7 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView"
         android:layout_width="400px"
         android:layout_height="300px"
         android:layout_marginTop="12dp"
@@ -87,5 +88,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:srcCompat="@drawable/puncak" />
+
+    <Button
+        android:id="@+id/to_main_activity3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:onClick="main_activity3"
+        android:text="MainActivity3"
+        android:textSize="20px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
+    <Button
+        android:id="@+id/to_main_activity4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:onClick="main_activity4"
+        android:text="MainActivity4"
+        android:textSize="20px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/to_main_activity3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
