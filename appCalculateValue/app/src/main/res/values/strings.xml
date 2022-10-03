@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">appCalculateValue</string>
-    <string name="text_title">Nilai</string>
-    <string name="text_nim">NIM</string>
-    <string name="text_nama">Nama</string>
-</resources>
