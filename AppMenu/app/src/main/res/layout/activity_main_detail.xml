@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivityDetail"
+    android:orientation="vertical">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_menu"
+        android:layout_marginVertical="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/menu1"/>
+
+    <TextView
+        android:id="@+id/nama_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nasi Goreng"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppins_bold"/>
+
+    <TextView
+        android:id="@+id/harga_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="10000"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textColor="@color/blue"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/satuan_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="/porsi"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:textColor="@color/black"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+        <Button
+            android:id="@+id/btn_minus"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="-"/>
+        <TextView
+            android:id="@+id/count_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="20dp"
+            android:textColor="@color/black"/>
+        <Button
+            android:id="@+id/btn_plus"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="+"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/total_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Rp. 0"
+            android:layout_marginVertical="10dp"/>
+        <Button
+            android:id="@+id/btn_beli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Beli"/>
+
+    </LinearLayout>
+
+</LinearLayout>

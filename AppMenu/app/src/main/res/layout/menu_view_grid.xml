@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="10dp"
+    android:paddingHorizontal="10dp"
+    android:layout_height="wrap_content"
+    android:background="@color/abu">
+    <GridLayout
+        android:columnCount="2"
+        android:rowCount="10"
+        android:alignmentMode="alignMargins"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnOrderPreserved="false">
+        <androidx.cardview.widget.CardView
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardCornerRadius="10dp"
+            android:backgroundTint="@color/white"
+            app:cardElevation="0dp"
+            android:layout_height="210dp">
+            <RelativeLayout
+                android:id="@+id/grid_layout"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:textAlignment="center">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/image_menu"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginHorizontal="15dp"
+                    android:src="@drawable/menu1" />
+
+                <TextView
+                    android:id="@+id/nama_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/image_menu"
+                    android:text="Nasi Goreng"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/harga_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/nama_menu"
+                    android:layout_marginTop="0dp"
+                    android:text="10000"
+                    android:textStyle="bold"
+                    android:textColor="@color/blue"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/satuan_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_below="@id/harga_menu"
+                    android:layout_marginTop="0dp"
+                    android:text="/porsi"
+                    android:textColor="@color/black"/>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </GridLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
