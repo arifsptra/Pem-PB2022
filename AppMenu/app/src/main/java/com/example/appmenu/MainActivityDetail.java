@@ -77,12 +77,12 @@ public class MainActivityDetail extends AppCompatActivity {
                 String namaMenu = nama_menu.getText().toString();
                 String totalHarga = String.valueOf(priceView);
                 String jumlahPesan = String.valueOf(jumlah);
-//                String totalText = total_text.getText().toString();
+                String hargaAwal = harga_menu.getText().toString();
                 Intent intent = new Intent(MainActivityDetail.this, MainActivityBeli.class);
                 intent.putExtra("nama_menu", namaMenu);
-//                intent.putExtra("total_harga", totalText);
                 intent.putExtra("total_harga", totalHarga);
                 intent.putExtra("jumlah_pesan", jumlahPesan);
+                intent.putExtra("harga_awal", hargaAwal);
                 startActivity(intent);
             }
         });
