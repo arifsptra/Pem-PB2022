@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivityBeli">
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PT. A11.2021.13480"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Penjualan Mobil"
+        android:textColor="@color/black"
+        android:textAlignment="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="======================================================"
+        android:layout_marginVertical="10dp"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama          : "
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/namaPelangganTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Arif Saputra"
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Membeli: "/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Merk Mobil          : "
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/merkMobilTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lamborgini"
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kode Mobil          : "
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/kodeMobilTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MLSJE"
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sejumlah             : "
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/jumlahMobilTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 Unit"
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seharga               : "
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/hargaSatuanMobilTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp. 5000000000 /Unit"
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Biaya yang harus dibayar: "/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Biaya          : "
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/totalBiayaMobilTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp. 10000000000"
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

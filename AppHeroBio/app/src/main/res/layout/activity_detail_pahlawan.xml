@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailPahlawan">
+    <ImageView
+        android:id="@+id/image_pahlawan"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/pahlawan1"
+        android:textAlignment="center"
+        android:layout_marginTop="80dp"/>
+    <TextView
+        android:id="@+id/nama_pahlawan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20sp"
+        android:textColor="@color/black"
+        android:text="JokoWidodo"/>
+    <TextView
+        android:id="@+id/title_pahlawan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:layout_marginTop="5sp"
+        android:textColor="@color/black"
+        android:text="Presiden"/>
+    <TextView
+        android:id="@+id/deskripsi_pahlawan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:justificationMode="inter_word"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:paddingHorizontal="20sp"
+        android:text="  Joko Widodo; lahir 21 Juni 1961 adalah presiden Indonesia yang mulai menjabat sejak tanggal 20 Oktober 2014. Terpilih dalam Pemilu Presiden 2014, Jokowi menjadi presiden Indonesia pertama yang bukan berasal dari elite politik atau militer Indonesia. Dia terpilih bersama Wakil Presiden Jusuf Kalla dan kembali terpilih bersama Wakil Presiden Ma'ruf Amin dalam Pemilu Presiden 2019. Sebelumnya, Jokowi pernah menjabat sebagai gubernur Jakarta sejak 15 Oktober 2012 hingga 16 Oktober 2014 didampingi Basuki Tjahaja Purnama sebagai wakil gubernur. Sebelumnya, ia adalah wali kota Surakarta, sejak tanggal 28 Juli 2005 hingga 1 Oktober 2012, didampingi F.X. Hadi Rudyatmo sebagai wakil wali kota.[7] Dua tahun menjalani periode keduanya menjadi wali kota Surakarta, Jokowi ditunjuk oleh partainya, Partai Demokrasi Indonesia Perjuangan (PDI-P), untuk bersaing dalam Pilkada DKI Jakarta 2012 berpasangan dengan Basuki Tjahaja Purnama."/>
+</LinearLayout>
