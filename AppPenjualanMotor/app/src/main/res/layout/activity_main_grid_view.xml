@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:columnCount="2"
+    android:rowCount="10"
+    android:alignmentMode="alignMargins"
+    android:columnOrderPreserved="false">
+    <LinearLayout
+        android:layout_margin="2dp"
+        android:id="@+id/grid_layout"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/gambarMotorImage"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/motor1" />
+
+        <TextView
+            android:id="@+id/namaMotorText"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:text="Toyota Rush"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/kodeMotorText"
+            android:layout_width="wrap_content"
+            android:layout_height="16sp"
+            android:text="(HASB)"
+            android:textSize="12dp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/hargaMotorText"
+            android:layout_width="wrap_content"
+            android:layout_height="19sp"
+            android:text="Rp. 17,200,000"
+            android:textStyle="bold"
+            android:textColor="@color/blue_500"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+</GridLayout>
