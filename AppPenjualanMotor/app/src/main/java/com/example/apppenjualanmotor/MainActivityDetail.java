@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class MainActivityDetail extends AppCompatActivity {
 
     TextView namaMotorText, kodeMotorText, hargaMotorText, count, total;
@@ -73,21 +75,21 @@ public class MainActivityDetail extends AppCompatActivity {
             public void onClick(View view) {
                 String namaMotor = namaMotorText.getText().toString();
                 String totalHarga = String.valueOf(priceView);
-                String kodeMotor = kodeMotorText.getText().toString();
                 String jumlahPesan = String.valueOf(jumlah);
                 String hargaAwal = hargaMotorText.getText().toString();
                 String namaPelanggan = namaPelangganText.getText().toString();
                 String pekerjaanPelanggan = pekerjaanPelangganText.getText().toString();
                 String alamatPelanggan = alamatPelangganText.getText().toString();
+                String totalBayar = String.valueOf(priceView+(priceView*10/100));
                 Intent intent = new Intent(MainActivityDetail.this, MainActivityCetakPesanan.class);
                 intent.putExtra("nama_pelanggan", namaPelanggan);
                 intent.putExtra("pekerjaan_pelanggan", pekerjaanPelanggan);
                 intent.putExtra("alamat_pelanggan", alamatPelanggan);
                 intent.putExtra("nama_motor", namaMotor);
-                intent.putExtra("kode_motor", kodeMotor);
                 intent.putExtra("total_harga", totalHarga);
                 intent.putExtra("jumlah_pesan", jumlahPesan);
                 intent.putExtra("harga_awal", hargaAwal);
+                intent.putExtra("total_bayar", totalBayar);
                 startActivity(intent);
             }
         });

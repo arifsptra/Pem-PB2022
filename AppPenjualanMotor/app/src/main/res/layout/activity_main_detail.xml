@@ -150,6 +150,6 @@
             android:layout_height="20dp"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:text="Rp. 20,000,000"/>
+            android:text="Rp. 0"/>
     </LinearLayout>
 </LinearLayout>
