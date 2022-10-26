@@ -44,14 +44,14 @@ public class MainActivityGridAdapter extends RecyclerView.Adapter<MainActivityGr
                 String namaMotor = arrayList.get(position).nama_motor;
                 String kodeMotor = arrayList.get(position).kode_motor;
                 String hargaMotor = arrayList.get(position).harga_motor;
-                int imageMotor = arrayList.get(position).gambar_motor;
+                int gambarMotor = arrayList.get(position).gambar_motor;
 
                 Intent intent = new Intent(context, MainActivityDetail.class);
 
                 intent.putExtra("nama_motor", namaMotor);
                 intent.putExtra("kode_motor", kodeMotor);
                 intent.putExtra("harga_motor", hargaMotor);
-                intent.putExtra("image_motor", imageMotor);
+                intent.putExtra("gambar_motor", gambarMotor);
 
                 context.startActivity(intent);
             }
