@@ -13,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class MainActivityListAdapter extends RecyclerView.Adapter<MainActivityListAdapter.myViewHolder>{
@@ -33,24 +34,30 @@ public class MainActivityListAdapter extends RecyclerView.Adapter<MainActivityLi
 
     @Override
     public void onBindViewHolder(@NonNull MainActivityListAdapter.myViewHolder holder, @SuppressLint("RecyclerView") final int position) {
+        DecimalFormat formatter = new DecimalFormat("#,###");
+        String tampilanHargaMotor = String.valueOf(arrayList.get(position).tampilan_harga);
         holder.cnamamotor.setText(arrayList.get(position).nama_motor);
         holder.ckodemotor.setText(arrayList.get(position).kode_motor);
-        holder.chargamotor.setText(arrayList.get(position).harga_motor);
+        holder.chargamotor.setText("Rp. "+formatter.format(Integer.parseInt(tampilanHargaMotor)));
         holder.cgambarmotor.setImageResource(arrayList.get(position).gambar_motor);
         holder.listLayout.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 String namaMotor = arrayList.get(position).nama_motor;
                 String kodeMotor = arrayList.get(position).kode_motor;
-                String hargaMotor = arrayList.get(position).harga_motor;
-                int imageMotor = arrayList.get(position).gambar_motor;
+                int hargaMotor = arrayList.get(position).harga_motor;
+                int stokMotor = arrayList.get(position).stok_motor;
+                String tampilanHarga = arrayList.get(position).tampilan_harga;
+                int gambarMotor = arrayList.get(position).gambar_motor;
 
                 Intent intent = new Intent(context, MainActivityDetail.class);
 
                 intent.putExtra("nama_motor", namaMotor);
                 intent.putExtra("kode_motor", kodeMotor);
                 intent.putExtra("harga_motor", hargaMotor);
-                intent.putExtra("image_motor", imageMotor);
+                intent.putExtra("stok_motor", stokMotor);
+                intent.putExtra("tampilan_harga", "Rp. "+formatter.format(Integer.parseInt(tampilanHarga)));
+                intent.putExtra("gambar_motor", gambarMotor);
 
                 context.startActivity(intent);
             }

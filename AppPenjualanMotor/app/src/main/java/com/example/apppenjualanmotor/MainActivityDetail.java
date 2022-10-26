@@ -14,12 +14,17 @@ import java.text.DecimalFormat;
 
 public class MainActivityDetail extends AppCompatActivity {
 
-    TextView namaMotorText, kodeMotorText, hargaMotorText, count, total;
+    TextView namaMotorText, kodeMotorText, hargaMotorText, count, total, stok;
     EditText namaPelangganText, pekerjaanPelangganText, alamatPelangganText;
     Button btn_minus, btn_plus, btn_beli;
     ImageView gambarMotorImage;
+    String sisaStok;
+    int sisaStokInt;
+    int hargaMotor;
     int jumlah=0;
     int priceView=0;
+
+    DecimalFormat formatter = new DecimalFormat("#,###");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +38,7 @@ public class MainActivityDetail extends AppCompatActivity {
         namaPelangganText = findViewById(R.id.namaPelangganEditText);
         pekerjaanPelangganText = findViewById(R.id.pekerjaanPelangganEditText);
         alamatPelangganText = findViewById(R.id.alamatPelangganEditText);
+        stok = findViewById(R.id.sisaStok);
         count = findViewById(R.id.count_text);
         total = findViewById(R.id.totalBeli);
         btn_plus = findViewById(R.id.btn_plus);
@@ -41,31 +47,34 @@ public class MainActivityDetail extends AppCompatActivity {
 
         getIncomingExtra();
 
+        sisaStok = stok.getText().toString();
+        sisaStokInt = Integer.valueOf(sisaStok);
+
         btn_plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String hargaSatuan = hargaMotorText.getText().toString();
-                int basePrice = Integer.parseInt(hargaSatuan);
+                int basePrice = hargaMotor;
                 jumlah++;
                 total_harga();
                 priceView = basePrice*jumlah;
-                String setnewPrice = String.valueOf(priceView);
-                total.setText("Rp. "+setnewPrice);
+                total.setText("Rp. "+formatter.format(priceView));
+                sisaStokInt-=1;
+                stok.setText(String.valueOf(sisaStokInt));
             }
         });
 
         btn_minus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String hargaSatuan = hargaMotorText.getText().toString();
-                int basePrice = Integer.parseInt(hargaSatuan);
+                int basePrice = hargaMotor;
                 if(jumlah==0){
                 }else{
                     jumlah--;
                     total_harga();
                     priceView = basePrice*jumlah;
-                    String setnewPrice = String.valueOf(priceView);
-                    total.setText("Rp. "+setnewPrice);
+                    total.setText("Rp. "+formatter.format(priceView));
+                    sisaStokInt+=1;
+                    stok.setText(String.valueOf(sisaStokInt));
                 }
             }
         });
@@ -95,20 +104,24 @@ public class MainActivityDetail extends AppCompatActivity {
         });
     }
     private void getIncomingExtra() {
-        if(getIntent().hasExtra("nama_motor") && getIntent().hasExtra("kode_motor") && getIntent().hasExtra("harga_motor") && getIntent().hasExtra("gambar_motor")){
+        if(getIntent().hasExtra("nama_motor") && getIntent().hasExtra("kode_motor") && getIntent().hasExtra("harga_motor") && getIntent().hasExtra("stok_motor") && getIntent().hasExtra("tampilan_harga") && getIntent().hasExtra("gambar_motor")){
             String nama_motor = getIntent().getStringExtra("nama_motor");
             String kode_motor = getIntent().getStringExtra("kode_motor");
-            String harga_motor = getIntent().getStringExtra("harga_motor");
-            int gambar_motor = getIntent().getIntExtra("gambar_motor",1);
+            int harga_motor = getIntent().getIntExtra("harga_motor", 0);
+            int stok_motor = getIntent().getIntExtra("stok_motor",0);
+            String tampilan_harga = getIntent().getStringExtra("tampilan_harga");
+            int gambar_motor = getIntent().getIntExtra("gambar_motor",0);
 
-            setDataActivity(nama_motor, kode_motor, harga_motor, gambar_motor);
+            setDataActivity(nama_motor, kode_motor, harga_motor, stok_motor, tampilan_harga, gambar_motor);
         }
     }
 
-    private void setDataActivity(String nama_motor, String kode_motor, String harga_motor, int gambar_motor) {
+    private void setDataActivity(String nama_motor, String kode_motor, int harga_motor, int stok_motor, String tampilan_harga, int gambar_motor) {
         namaMotorText.setText(nama_motor);
         kodeMotorText.setText(kode_motor);
-        hargaMotorText.setText(harga_motor);
+        hargaMotorText.setText(tampilan_harga);
+        hargaMotor = harga_motor;
+        stok.setText(String.valueOf(stok_motor));
         gambarMotorImage.setImageResource(gambar_motor);
     }
 

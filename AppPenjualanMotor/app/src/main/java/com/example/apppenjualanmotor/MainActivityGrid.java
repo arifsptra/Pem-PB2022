@@ -20,8 +20,10 @@ public class MainActivityGrid extends AppCompatActivity {
 
     String kodeMotor[] = {"HASB", "HASBT", "HASG", "HASS", "HASV125", "HASV160", "HASPCX", "HASADV", "HASPCXE", "HASF"};
     String namaMotor[] = {"BeAT", "BeAT Street", "Genio", "Scoopy", "Vario 125", "Vario 160", "PCX", "ADV 160", "PCX e:HEV", "Forza"};
-    String hargaMotor[] = {"17620000", "18276000", "18880000", "21353000", "22350000", "26339000", "32079000", "36000000", "45045000", "90313000"};
+    int hargaMotor[] = {17620000, 18276000, 18880000, 21353000, 22350000, 26339000, 32079000, 36000000, 45045000, 90313000};
+    String tampilanHargaMotor[] = {"17620000", "18276000", "18880000", "21353000", "22350000", "26339000", "32079000", "36000000", "45045000", "90313000"};
     int gambarMotor[] = {R.drawable.motor1, R.drawable.motor2, R.drawable.motor3, R.drawable.motor4, R.drawable.motor5, R.drawable.motor6, R.drawable.motor7, R.drawable.motor8, R.drawable.motor9, R.drawable.motor10};
+    int stokMotor[] = {37, 19, 21, 43, 18, 34, 25, 41, 23, 11};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,8 @@ public class MainActivityGrid extends AppCompatActivity {
             menuArrayList.add(new modelApp(namaMotor[i],
                     kodeMotor[i],
                     hargaMotor[i],
+                    stokMotor[i],
+                    tampilanHargaMotor[i],
                     gambarMotor[i]));
         }
     }

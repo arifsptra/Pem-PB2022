@@ -15,7 +15,7 @@ public class MainActivityCetakPesanan extends AppCompatActivity {
     TextView namaPembeliText, pekerjaanPembeliText, alamatPembeliText, beliUnitText, hargaText, jumlahText, totalText, bayarText;
     String namaPembeli, pekerjaanPembeli, alamatPembeli, beliUnit, harga, jumlah, total, bayar;
 
-    DecimalFormat formatter = new DecimalFormat("#,###.00");
+    DecimalFormat formatter = new DecimalFormat("#,###");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +46,8 @@ public class MainActivityCetakPesanan extends AppCompatActivity {
         pekerjaanPembeliText.setText(": "+pekerjaanPembeli);
         alamatPembeliText.setText(": "+alamatPembeli);
         beliUnitText.setText(": "+beliUnit);
-        hargaText.setText(": Rp. "+formatter.format(Integer.parseInt(harga)));
-        jumlahText.setText(": "+jumlah);
+        hargaText.setText(": "+harga);
+        jumlahText.setText(": "+jumlah+" Buah");
         totalText.setText(": Rp. "+formatter.format(Integer.parseInt(total)));
         bayarText.setText(": Rp. "+formatter.format(Integer.parseInt(bayar)));
     }
