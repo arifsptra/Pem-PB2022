@@ -9,4 +9,8 @@
         android:id="@+id/menu_list"
         android:title="App List"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_laporan"
+        android:title="Laporan"
+        app:showAsAction="never"/>
 </menu>

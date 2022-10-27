@@ -14,6 +14,7 @@ import java.text.DecimalFormat;
 
 public class MainActivityDetail extends AppCompatActivity {
 
+    DatabaseHelper dbh;
     TextView namaMotorText, kodeMotorText, hargaMotorText, count, total, stok;
     EditText namaPelangganText, pekerjaanPelangganText, alamatPelangganText;
     Button btn_minus, btn_plus, btn_beli;
@@ -23,6 +24,7 @@ public class MainActivityDetail extends AppCompatActivity {
     int hargaMotor;
     int jumlah=0;
     int priceView=0;
+    String satuan = "unit";
 
     DecimalFormat formatter = new DecimalFormat("#,###");
 
@@ -44,6 +46,7 @@ public class MainActivityDetail extends AppCompatActivity {
         btn_plus = findViewById(R.id.btn_plus);
         btn_minus = findViewById(R.id.btn_minus);
         btn_beli = findViewById(R.id.btn_beli);
+        dbh = new DatabaseHelper(this);
 
         getIncomingExtra();
 
@@ -82,6 +85,7 @@ public class MainActivityDetail extends AppCompatActivity {
         btn_beli.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String gambarMotor = gambarMotorImage.getResources().toString();
                 String namaMotor = namaMotorText.getText().toString();
                 String totalHarga = String.valueOf(priceView);
                 String jumlahPesan = String.valueOf(jumlah);
@@ -90,7 +94,10 @@ public class MainActivityDetail extends AppCompatActivity {
                 String pekerjaanPelanggan = pekerjaanPelangganText.getText().toString();
                 String alamatPelanggan = alamatPelangganText.getText().toString();
                 String totalBayar = String.valueOf(priceView+(priceView*10/100));
+                dbh = new DatabaseHelper(MainActivityDetail.this);
+                dbh.tambahdata(hargaAwal, namaMotor, satuan, kodeMotorText.getText().toString(), 1, priceView, jumlahPesan, 100);
                 Intent intent = new Intent(MainActivityDetail.this, MainActivityCetakPesanan.class);
+                intent.putExtra("gambar_motor", gambarMotor);
                 intent.putExtra("nama_pelanggan", namaPelanggan);
                 intent.putExtra("pekerjaan_pelanggan", pekerjaanPelanggan);
                 intent.putExtra("alamat_pelanggan", alamatPelanggan);
@@ -99,6 +106,8 @@ public class MainActivityDetail extends AppCompatActivity {
                 intent.putExtra("jumlah_pesan", jumlahPesan);
                 intent.putExtra("harga_awal", hargaAwal);
                 intent.putExtra("total_bayar", totalBayar);
+                intent.putExtra("sisa_stok", sisaStok);
+                intent.putExtra("stok_motor", stok.getText().toString());
                 startActivity(intent);
             }
         });

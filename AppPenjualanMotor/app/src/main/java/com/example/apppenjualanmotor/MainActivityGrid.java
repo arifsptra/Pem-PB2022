@@ -67,6 +67,10 @@ public class MainActivityGrid extends AppCompatActivity {
                 Toast.makeText(this, "Item grid selected", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivityGrid.this, MainActivityList.class);
                 startActivity(intent);
+            case R.id.menu_laporan:
+                Toast.makeText(this, "Item grid selected", Toast.LENGTH_SHORT).show();
+                Intent intent1 = new Intent(MainActivityGrid.this, MainActivityLaporan.class);
+                startActivity(intent1);
             default:
                 return super.onOptionsItemSelected(item);
         }
