@@ -33,11 +33,6 @@ public class MainActivity extends AppCompatActivity {
         dbh = new DatabaseHelper(this);
         listItem = new ArrayList<>();
 
-        // String kodeMotor = "HASB";
-        // String namaMotor = "BeAT";
-
-        // dbh.tambahData(kodeMotor, namaMotor);
-
         Cursor cursor=dbh.baca_data();
 
         listItem.clear();
