@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AppPenjualanBarang</string>
+
+    <string-array name="satuan">
+        <item>Unit</item>
+        <item>Buah</item>
+        <item>Biji</item>
+    </string-array>
+</resources>

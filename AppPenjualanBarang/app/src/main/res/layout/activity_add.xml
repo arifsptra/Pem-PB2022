@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20.80dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_iv_alatKesehatan"
+            android:layout_width="195dp"
+            android:layout_height="195dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_alatKesehatan_profile"
+                android:layout_width="182dp"
+                android:layout_height="182dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_image"
+                android:background="#f1f1f1f1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent" />
+
+            <ImageView
+                android:id="@+id/btn_change_image"
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:padding="7.80dp"
+                android:src="@drawable/add_photo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tambah_kode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.40dp"
+            android:text="Kode Alat"
+            android:textColor="@color/black"
+            android:textSize="18.20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_iv_alatKesehatan" />
+
+        <EditText
+            android:id="@+id/et_kode_alatKesehatan"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10.40dp"
+            android:layout_margin="5dp"
+            android:paddingHorizontal="20dp"
+            android:background="@drawable/radius_white"
+            android:elevation="4dp"
+            android:hint="Kode"
+            android:inputType="textPersonName"
+            android:textColor="#000"
+            android:textSize="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tambah_kode"/>
+
+        <TextView
+            android:id="@+id/tambah_nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.40dp"
+            android:text="Nama Alat"
+            android:textColor="@color/black"
+            android:textSize="18.20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_kode_alatKesehatan" />
+
+        <EditText
+            android:id="@+id/et_nama_alatKesehatan"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10.40dp"
+            android:layout_margin="5dp"
+            android:paddingHorizontal="20dp"
+            android:background="@drawable/radius_white"
+            android:elevation="4dp"
+            android:hint="Nama Alat"
+            android:inputType="textPersonName"
+            android:textColor="#000"
+            android:textSize="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tambah_nama"/>
+
+
+        <TextView
+            android:id="@+id/tambah_satuan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.40dp"
+            android:text="Satuan"
+            android:textColor="@color/black"
+            android:textSize="18.20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_nama_alatKesehatan" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_satuan_alatKesehatan_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tambah_satuan"
+            android:padding="5dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/et_satuan_alatKesehatan"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:paddingHorizontal="20dp"
+                android:text="Unit"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tambah_harga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.40dp"
+            android:text="Harga"
+            android:textColor="@color/black"
+            android:textSize="18.20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_satuan_alatKesehatan_layout" />
+
+        <TextView
+            android:id="@+id/rp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp"
+            android:textColor="@color/black"
+            android:textSize="18.20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/et_harga_alatKesehatan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/et_harga_alatKesehatan" />
+
+        <EditText
+            android:id="@+id/et_harga_alatKesehatan"
+            android:layout_width="0dp"
+            android:layout_height="46.80dp"
+            android:layout_marginStart="10.40dp"
+            android:layout_marginTop="2.60dp"
+            android:paddingHorizontal="20dp"
+            android:background="@drawable/radius_white"
+            android:elevation="4dp"
+            android:hint="1000000"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:paddingStart="15.60dp"
+            android:paddingEnd="15.60dp"
+            android:textSize="16.90sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/rp"
+            app:layout_constraintTop_toBottomOf="@+id/tambah_harga"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/tambah_jumlah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Jumlah Stock"
+            android:textColor="@color/black"
+            android:textSize="18.20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_harga_alatKesehatan" />
+
+        <LinearLayout
+            android:id="@+id/layout_btn_plus_min"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:elevation="6.50dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tambah_jumlah">
+
+            <Button
+                android:id="@+id/remove_btn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="46.80dp"
+                android:layout_height="46.80dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:backgroundTint="@android:color/transparent"
+                android:text="-"
+                android:textColor="@color/secondaryText"
+                app:drawableTint="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_qty"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/black"
+                android:textSize="18.20sp"
+                android:textStyle="bold" />
+
+
+            <Button
+                android:id="@+id/plus_btn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="46.80dp"
+                android:layout_height="46.80dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:backgroundTint="@android:color/transparent"
+                android:text="+"
+                android:textColor="@color/secondaryText"
+                app:drawableTint="@color/black" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/btn_add_alatKesehatan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="input Data"
+            android:textAllCaps="false"
+            android:background="@drawable/radius_white"
+            app:layout_constraintTop_toBottomOf="@+id/layout_btn_plus_min" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
