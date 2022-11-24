@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="4dp"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/purple_200"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/kodematkul"
+            android:layout_width="90dp"
+            android:hint="kode matakul"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/nmmatkul"
+            android:layout_width="210dp"
+            android:hint="nama matakul"
+            android:layout_toRightOf="@+id/kodematkul"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/sksmatkul"
+            android:layout_width="90dp"
+            android:hint="sks matakul"
+            android:layout_toRightOf="@+id/nmmatkul"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

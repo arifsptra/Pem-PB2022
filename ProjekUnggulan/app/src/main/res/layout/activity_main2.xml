@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/gambar_menu"
+            android:layout_width="150dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/menu1"
+            android:layout_height="150dp"/>
+
+        <TextView
+            android:id="@+id/nama_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gambar_menu"
+            android:layout_centerHorizontal="true"
+            android:text="nama menu"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+        <TextView
+            android:id="@+id/harga_menu"
+            android:layout_width="wrap_content"
+            android:text="harga menu"
+            android:layout_below="@+id/nama_menu"
+            android:layout_centerHorizontal="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/satuan_menu"
+            android:layout_width="wrap_content"
+            android:text="satuan"
+            android:layout_below="@+id/harga_menu"
+            android:layout_centerHorizontal="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/jumlah_beli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/satuan_menu"
+            android:layout_centerHorizontal="true" />
+        <TextView
+            android:id="@+id/total_pesan"
+            android:layout_width="wrap_content"
+            android:text="total pesan"
+            android:layout_below="@+id/jumlah_beli"
+            android:layout_centerHorizontal="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/tblpesanmenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/total_pesan"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="PESAN" />
+
+        <Button
+            android:id="@+id/tblkembali"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/total_pesan"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/tblpesanmenu"
+            android:text="batal" />
+    </RelativeLayout>
+
+</LinearLayout>
