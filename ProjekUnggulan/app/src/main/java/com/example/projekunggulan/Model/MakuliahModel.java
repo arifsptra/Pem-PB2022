@@ -1,37 +1,61 @@
 package com.example.projekunggulan.Model;
 
 public class MakuliahModel {
-    String kode;
-    String nama_mtkl;
-    String sks;
+    String nip;
+    String nama_pegawai;
+    String jenis_kel;
+    String status;
+    String pendidikan;
+    String alamat;
+    String kota;
 
-    public MakuliahModel(String kode, String nama_mtkl, String sks) {
-        this.kode = kode;
-        this.nama_mtkl = nama_mtkl;
-        this.sks = sks;
+    public MakuliahModel(String nip, String nama_pegawai, String jenis_kel, String status, String pendidikan, String alamat, String kota) {
+        this.nip = nip;
+        this.nama_pegawai = nama_pegawai;
+        this.jenis_kel = jenis_kel;
+        this.status = status;
+        this.pendidikan = pendidikan;
+        this.alamat = alamat;
+        this.kota = kota;
     }
 
-    public String getKode() {
-        return kode;
+    public String getNip() {
+        return nip;
     }
 
-    public void setKode(String kode) {
-        this.kode = kode;
+    public void setNip(String nip) {
+        this.nip = nip;
     }
 
-    public String getNama_mtkl() {
-        return nama_mtkl;
+    public String getNama_pegawai() {
+        return nama_pegawai;
     }
 
-    public void setNama_mtkl(String nama_mtkl) {
-        this.nama_mtkl = nama_mtkl;
+    public void setNama_pegawai(String nama_pegawai) {
+        this.nama_pegawai = nama_pegawai;
     }
 
-    public String getSks() {
-        return sks;
+    public String getJenis_kel() {
+        return jenis_kel;
     }
 
-    public void setSks(String sks) {
-        this.sks = sks;
+    public void setJenis_kel(String jenis_kel) {
+        this.jenis_kel = jenis_kel;
     }
+
+    public String getStatus() { return status; }
+
+    public void setStatus(String status) { this.status = status; }
+
+    public String getPendidikan() { return pendidikan; }
+
+    public void setPendidikan(String pendidikan) { this.pendidikan = pendidikan; }
+
+    public String getAlamat() { return alamat; }
+
+    public void setAlamat(String alamat) { this.alamat = alamat; }
+
+    public String getKota() { return kota; }
+
+    public void setKota(String kota) { this.kota = kota; }
 }

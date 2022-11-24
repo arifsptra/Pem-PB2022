@@ -25,16 +25,20 @@ public class AdaptorMtkul extends RecyclerView.Adapter<AdaptorMtkul.viewholder> 
     @NonNull
     @Override
     public viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Context context=parent.getContext();
-        View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.format_matkul,parent,false);
+        Context context = parent.getContext();
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.format_matkul, parent, false);
         return new viewholder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull viewholder holder, int position) {
-         holder.mkode.setText(matakuliahArrayList.get(position).getKode());
-         holder.mnama.setText(matakuliahArrayList.get(position).getNama_mtkl());
-         holder.msks.setText(matakuliahArrayList.get(position).getSks());
+        holder.nip_pegawai.setText(matakuliahArrayList.get(position).getNip());
+        holder.nama_pegawai.setText(matakuliahArrayList.get(position).getNama_pegawai());
+        holder.jk_pegawai.setText(matakuliahArrayList.get(position).getJenis_kel());
+        holder.status_pegawai.setText(matakuliahArrayList.get(position).getStatus());
+        holder.pendidikan_pegawai.setText(matakuliahArrayList.get(position).getPendidikan());
+        holder.alamat_pegawai.setText(matakuliahArrayList.get(position).getAlamat());
+        holder.kota_pegawai.setText(matakuliahArrayList.get(position).getKota());
     }
 
     @Override
@@ -43,13 +47,17 @@ public class AdaptorMtkul extends RecyclerView.Adapter<AdaptorMtkul.viewholder> 
     }
 
     public class viewholder extends RecyclerView.ViewHolder {
-        TextView mkode,mnama,msks;
+        TextView nip_pegawai, nama_pegawai, jk_pegawai, status_pegawai, pendidikan_pegawai, alamat_pegawai, kota_pegawai;
+
         public viewholder(@NonNull View itemView) {
             super(itemView);
-            mkode=itemView.findViewById(R.id.kodematkul);
-            mnama=itemView.findViewById(R.id.nmmatkul);
-            msks=itemView.findViewById(R.id.sksmatkul);
-
+            nip_pegawai = itemView.findViewById(R.id.NIP);
+            nama_pegawai = itemView.findViewById(R.id.namaPegawai);
+            jk_pegawai = itemView.findViewById(R.id.jkPegawai);
+            status_pegawai = itemView.findViewById(R.id.statusPegawai);
+            pendidikan_pegawai = itemView.findViewById(R.id.pendidikanPegawai);
+            alamat_pegawai = itemView.findViewById(R.id.alamatPegawai);
+            kota_pegawai = itemView.findViewById(R.id.kotaPegawai);
         }
     }
 }

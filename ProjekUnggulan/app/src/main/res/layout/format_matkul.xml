@@ -1,33 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<HorizontalScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_margin="4dp"
     android:layout_height="wrap_content">
-    <RelativeLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:background="@color/purple_200"
+        android:layout_margin="4dp"
         android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/kodematkul"
-            android:layout_width="90dp"
-            android:hint="kode matakul"
-            android:textColor="@color/white"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:id="@+id/nmmatkul"
-            android:layout_width="210dp"
-            android:hint="nama matakul"
-            android:layout_toRightOf="@+id/kodematkul"
-            android:textColor="@color/white"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:id="@+id/sksmatkul"
-            android:layout_width="90dp"
-            android:hint="sks matakul"
-            android:layout_toRightOf="@+id/nmmatkul"
-            android:textColor="@color/white"
-            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@color/blue"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="4dp">
+            <TextView
+                android:id="@+id/NIP"
+                android:layout_width="90dp"
+                android:hint="Nip Pegawai"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/namaPegawai"
+                android:layout_width="150dp"
+                android:hint="Nama Pegawai"
+                android:layout_toRightOf="@+id/NIP"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/jkPegawai"
+                android:layout_width="90dp"
+                android:hint="Jenis Kelamin"
+                android:layout_toRightOf="@+id/namaPegawai"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/statusPegawai"
+                android:layout_width="90dp"
+                android:hint="Jenis Kelamin"
+                android:layout_toRightOf="@+id/jkPegawai"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/pendidikanPegawai"
+                android:layout_width="90dp"
+                android:hint="Jenis Kelamin"
+                android:layout_toRightOf="@+id/statusPegawai"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/alamatPegawai"
+                android:layout_width="90dp"
+                android:hint="Jenis Kelamin"
+                android:layout_toRightOf="@+id/pendidikanPegawai"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/kotaPegawai"
+                android:layout_width="90dp"
+                android:hint="Jenis Kelamin"
+                android:layout_toRightOf="@+id/alamatPegawai"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
 
-    </RelativeLayout>
-
-</LinearLayout>
+</HorizontalScrollView>
