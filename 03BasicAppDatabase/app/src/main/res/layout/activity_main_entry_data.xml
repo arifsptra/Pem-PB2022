@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivityEntryData"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Entry Data Mahasiswa"
+        android:textSize="20dp"
+        android:padding="10dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/kodeText"
+            android:layout_width="180dp"
+            android:text="Kode MataKuliah"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"/>
+        <EditText
+            android:id="@+id/kodeEdit"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:hint="Kode Matakuliah"
+            android:layout_toRightOf="@+id/kodeText"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/namaText"
+            android:layout_width="180dp"
+            android:text="Nama MataKuliah"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"/>
+        <EditText
+            android:id="@+id/namaEdit"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:hint="Nama Matakuliah"
+            android:layout_toRightOf="@+id/namaText"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/sksText"
+            android:layout_width="180dp"
+            android:text="Jumlah SKS"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"/>
+        <EditText
+            android:id="@+id/sksEdit"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="SKS"
+            android:layout_toRightOf="@+id/sksText"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/syaratText"
+            android:layout_width="180dp"
+            android:text="Syarat MataKuliah"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"/>
+        <EditText
+            android:id="@+id/syaratEdit"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:hint="Syarat Matakuliah"
+            android:layout_toRightOf="@+id/syaratText"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:layout_marginRight="10dp"/>
+        <Button
+            android:id="@+id/viewButton"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="View"
+            android:layout_toRightOf="@+id/saveButton"/>
+    </RelativeLayout>
+</LinearLayout>
