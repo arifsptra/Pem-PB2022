@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class KoneksiMatakuliah {
-    public final static String URL_BASE="http://192.168.18.208/";
+    public final static String URL_BASE="http://192.168.43.157/";
     private static Retrofit retrofit;
 
     public static Retrofit Koneksi()

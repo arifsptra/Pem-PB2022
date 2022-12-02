@@ -4,13 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.projekunggulan.API.IterfacesMatakuliah;
 import com.example.projekunggulan.Adapter.AdaptorMtkul;
 import com.example.projekunggulan.Model.MakuliahModel;
 import com.example.projekunggulan.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +26,7 @@ public class RestAPIMatakuliah extends AppCompatActivity {
     RecyclerView recyclerViewmtkul;
     IterfacesMatakuliah iterfacesMatakuliah;
     KoneksiMatakuliah koneksiMatakuliah;
-
+    FloatingActionButton tombolInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,13 @@ public class RestAPIMatakuliah extends AppCompatActivity {
         iterfacesMatakuliah=KoneksiMatakuliah.Koneksi().create(IterfacesMatakuliah.class);
         recyclerViewmtkul.setLayoutManager(new LinearLayoutManager(this));
 
+        tombolInput = findViewById(R.id.tombolInput);
+        tombolInput.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RestAPIMatakuliah.this, EntryDataMatakuliah.class));
+            }
+        });
     }
 
     @Override
