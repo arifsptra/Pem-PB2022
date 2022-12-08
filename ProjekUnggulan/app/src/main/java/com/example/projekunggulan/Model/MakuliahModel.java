@@ -9,15 +9,15 @@ public class MakuliahModel {
     String alamat;
     String kota;
 
-    public MakuliahModel(String nip, String nama_pegawai, String jenis_kel, String status, String pendidikan, String alamat, String kota) {
-        this.nip = nip;
-        this.nama_pegawai = nama_pegawai;
-        this.jenis_kel = jenis_kel;
-        this.status = status;
-        this.pendidikan = pendidikan;
-        this.alamat = alamat;
-        this.kota = kota;
-    }
+//    public MakuliahModel(String nip, String nama_pegawai, String jenis_kel, String status, String pendidikan, String alamat, String kota) {
+//        this.nip = nip;
+//        this.nama_pegawai = nama_pegawai;
+//        this.jenis_kel = jenis_kel;
+//        this.status = status;
+//        this.pendidikan = pendidikan;
+//        this.alamat = alamat;
+//        this.kota = kota;
+//    }
 
     public String getNip() {
         return nip;
