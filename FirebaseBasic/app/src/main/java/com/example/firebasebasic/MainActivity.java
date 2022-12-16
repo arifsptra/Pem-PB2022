@@ -2,6 +2,7 @@ package com.example.firebasebasic;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -53,6 +54,13 @@ public class MainActivity extends AppCompatActivity {
                 mkm.setKota(ekota.getText().toString());
 
                 dbf.push().setValue(mkm);
+            }
+        });
+
+        bview.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, MainFB.class);
+                startActivity(intent);
             }
         });
     }

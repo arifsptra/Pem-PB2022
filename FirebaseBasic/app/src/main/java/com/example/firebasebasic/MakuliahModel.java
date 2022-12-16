@@ -8,6 +8,7 @@ public class MakuliahModel {
     String pendidikan;
     String alamat;
     String kota;
+    String key;
 
     public String getNip() {
         return nip;
@@ -48,5 +49,13 @@ public class MakuliahModel {
     public String getKota() { return kota; }
 
     public void setKota(String kota) { this.kota = kota; }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 }
 
