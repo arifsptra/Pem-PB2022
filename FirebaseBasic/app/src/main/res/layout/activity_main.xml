@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/judul"
+        android:text="Entry Data Pegawai"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"/>
+
+    <EditText
+        android:id="@+id/edit_nip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nomor Induk Pegawai"
+        android:layout_below="@+id/judul"/>
+    <EditText
+        android:id="@+id/edit_nama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nama Pegawai"
+        android:layout_below="@+id/edit_nip"/>
+    <EditText
+        android:id="@+id/edit_jk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Jenis Kelamin Pegawai"
+        android:layout_below="@+id/edit_nama"/>
+    <EditText
+        android:id="@+id/edit_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Status Pegawai"
+        android:layout_below="@+id/edit_jk"/>
+    <EditText
+        android:id="@+id/edit_pendidikan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Pendidikan Pegawai"
+        android:layout_below="@+id/edit_status"/>
+    <EditText
+        android:id="@+id/edit_alamat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Alamat Pegawai"
+        android:layout_below="@+id/edit_pendidikan"/>
+    <EditText
+        android:id="@+id/edit_kota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kota Pegawai"
+        android:layout_below="@+id/edit_alamat"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/button_save"
+        android:hint="Save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_kota"/>
+    <Button
+        android:id="@+id/button_view"
+        android:hint="View"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_kota"
+        android:layout_toRightOf="@+id/button_save"/>
+</RelativeLayout>
