@@ -7,19 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Login extends AppCompatActivity {
+public class Dashboard extends AppCompatActivity {
 
-    Button bLogin;
+    Button bKeluar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        bLogin = findViewById(R.id.bLogin);
-        bLogin.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_dashboard);
+        bKeluar = findViewById(R.id.bKeluar);
+        bKeluar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Login.this, Dashboard.class);
+                Intent intent = new Intent(Dashboard.this, Login.class);
                 startActivity(intent);
             }
         });
