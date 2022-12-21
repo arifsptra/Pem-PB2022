@@ -30,4 +30,27 @@ public interface APIRequestData {
             @Field("stok") String stok,
             @Field("gambar") String gambar
     );
+
+    @FormUrlEncoded
+    @POST("delete.php")
+    Call<ResponseModelBarang> ardHapusData(
+            @Field("kode") String kode
+    );
+
+    @FormUrlEncoded
+    @POST("get.php")
+    Call<ResponseModelBarang> ardGetData(
+            @Field("kode") String kode
+    );
+
+    @FormUrlEncoded
+    @POST("update.php")
+    Call<ResponseModelBarang> ardUpdateData(
+            @Field("kode") String kode,
+            @Field("nama") String nama,
+            @Field("satuan") String satuan,
+            @Field("harga") String harga,
+            @Field("stok") String stok,
+            @Field("gambar") String gambar
+    );
 }
