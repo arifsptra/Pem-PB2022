@@ -14,13 +14,14 @@ public class Dashboard extends AppCompatActivity {
 
     Button bKeluar;
 
-    CardView cvAboutme;
+    CardView cvMaster ,cvAboutme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
         bKeluar = findViewById(R.id.bKeluar);
+        cvMaster = findViewById(R.id.cvMaster);
         cvAboutme = findViewById(R.id.cvAboutme);
         bKeluar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,6 +30,14 @@ public class Dashboard extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        cvMaster.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this, Master.class));
+            }
+        });
+
         cvAboutme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

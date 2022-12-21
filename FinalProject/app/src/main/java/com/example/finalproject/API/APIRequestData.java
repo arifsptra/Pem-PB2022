@@ -1,5 +1,6 @@
 package com.example.finalproject.API;
 
+import com.example.finalproject.Model.ResponseModelBarang;
 import com.example.finalproject.Model.ResponseModelLogin;
 
 import retrofit2.Call;
@@ -17,5 +18,16 @@ public interface APIRequestData {
     Call<ResponseModelLogin> ardLoginData(
             @Field("username") String username,
             @Field("password") String password
+    );
+
+    @FormUrlEncoded
+    @POST("tambahBarang.php")
+    Call<ResponseModelBarang> ardCreateData(
+            @Field("kode") String kode,
+            @Field("nama") String nama,
+            @Field("satuan") String satuan,
+            @Field("harga") String harga,
+            @Field("stok") String stok,
+            @Field("gambar") String gambar
     );
 }
