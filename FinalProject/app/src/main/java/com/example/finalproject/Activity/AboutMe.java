@@ -1,4 +1,4 @@
-package com.example.finalproject;
+package com.example.finalproject.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,19 +7,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Login extends AppCompatActivity {
+import com.example.finalproject.R;
 
-    Button bLogin;
+public class AboutMe extends AppCompatActivity {
+
+    Button bKembali;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        bLogin = findViewById(R.id.bLogin);
-        bLogin.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_about_me);
+        bKembali = findViewById(R.id.bKembali);
+        bKembali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Login.this, Dashboard.class);
+                Intent intent = new Intent(AboutMe.this, Dashboard.class);
                 startActivity(intent);
             }
         });

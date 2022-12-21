@@ -1,4 +1,4 @@
-package com.example.finalproject;
+package com.example.finalproject.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.finalproject.R;
 
 public class Dashboard extends AppCompatActivity {
 
