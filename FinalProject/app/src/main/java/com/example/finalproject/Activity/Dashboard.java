@@ -14,7 +14,7 @@ public class Dashboard extends AppCompatActivity {
 
     Button bKeluar;
 
-    CardView cvMaster ,cvAboutme;
+    CardView cvMaster, cvTransaksi, cvAboutme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +22,12 @@ public class Dashboard extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
         bKeluar = findViewById(R.id.bKeluar);
         cvMaster = findViewById(R.id.cvMaster);
+        cvTransaksi = findViewById(R.id.cvTransaksi);
         cvAboutme = findViewById(R.id.cvAboutme);
         bKeluar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Dashboard.this, Login.class);
-                startActivity(intent);
+                startActivity(new Intent(Dashboard.this, Login.class));
             }
         });
 
@@ -38,11 +38,17 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
+        cvTransaksi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this, Transaksi.class));
+            }
+        });
+
         cvAboutme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Dashboard.this, AboutMe.class);
-                startActivity(intent);
+                startActivity(new Intent(Dashboard.this, AboutMe.class));
             }
         });
     }

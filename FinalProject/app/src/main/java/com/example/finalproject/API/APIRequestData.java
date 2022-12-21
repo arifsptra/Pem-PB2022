@@ -10,8 +10,8 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface APIRequestData {
-//    @GET("retrofit.php")
-//    Call<ResponseModelLogin> ardRetrieveData();
+    @GET("tampilBarang.php")
+    Call<ResponseModelBarang> ardTampilData();
 
     @FormUrlEncoded
     @POST("login.php")
