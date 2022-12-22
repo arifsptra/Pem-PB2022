@@ -21,10 +21,10 @@ import retrofit2.Response;
 
 public class Update extends AppCompatActivity {
 
-    private String xKode, xNama, xSatuan, xHarga, xStok, xGambar;
-    private EditText etKode, etNama, etSatuan, etHarga, etStok, etGambar;
+    private String xKode, xNama, xSatuan, xHarga, xStok;
+    private EditText etKode, etNama, etSatuan, etHarga, etStok;
     private Button bUbah;
-    private String yKode, yNama, ySatuan, yHarga, yStok, yGambar, yTerjual;
+    private String yKode, yNama, ySatuan, yHarga, yStok, yTerjual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,22 +37,18 @@ public class Update extends AppCompatActivity {
         xSatuan = terima.getStringExtra("xSatuan");
         xHarga = terima.getStringExtra("xHarga");
         xStok = terima.getStringExtra("xStok");
-//        xGambar = terima.getStringExtra("xGambar");
 
 //        etKode = findViewById(R.id.et_kode);
         etNama = findViewById(R.id.et_nama);
         etSatuan = findViewById(R.id.et_satuan);
         etHarga = findViewById(R.id.et_harga);
         etStok = findViewById(R.id.et_stok);
-//        etGambar = findViewById(R.id.et_gambar);
         bUbah = findViewById(R.id.b_ubah);
 
-//        etKode.setText(xKode);
         etNama.setText(xNama);
         etSatuan.setText(xSatuan);
         etHarga.setText(xHarga);
         etStok.setText(xStok);
-//        etGambar.setText(xGambar);
 
         bUbah.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +59,6 @@ public class Update extends AppCompatActivity {
                 yHarga = etHarga.getText().toString();
                 yStok = etStok.getText().toString();
                 yTerjual = "0";
-//                yGambar = etGambar.getText().toString();
 
                 updateData();
             }

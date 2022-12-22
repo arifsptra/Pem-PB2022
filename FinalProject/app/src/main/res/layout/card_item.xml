@@ -11,14 +11,13 @@
     <LinearLayout
         android:layout_width="150dp"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:background="@color/white">
+        android:gravity="center">
         <ImageView
             android:id="@+id/iv_barang"
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:layout_alignParentTop="true"
-            android:src="@drawable/icon1" />
+            android:src="@drawable/icon5" />
     </LinearLayout>
 
     <LinearLayout

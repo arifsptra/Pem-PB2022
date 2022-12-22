@@ -18,9 +18,17 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".Activity.CetakPesanan"
-            android:parentActivityName=".Activity.Detail"
+            android:name=".Activity.Tambah"
+            android:parentActivityName=".Activity.Master"
             android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activity.CetakPesanan"
+            android:exported="false"
+            android:parentActivityName=".Activity.Detail">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

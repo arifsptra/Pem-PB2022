@@ -7,7 +7,7 @@
         <TextView
             android:background="@drawable/border"
             android:id="@+id/tv_kode"
-            android:layout_width="175dp"
+            android:layout_width="120dp"
             android:gravity="center_vertical"
             android:layout_height="match_parent"
             android:paddingHorizontal="10dp"
@@ -18,7 +18,7 @@
         <TextView
             android:background="@drawable/border"
             android:id="@+id/tv_nama"
-            android:layout_width="175dp"
+            android:layout_width="250dp"
             android:gravity="center_vertical"
             android:layout_height="match_parent"
             android:paddingHorizontal="10dp"
@@ -51,7 +51,7 @@
         <TextView
             android:background="@drawable/border"
             android:id="@+id/tv_sisa_stok"
-            android:layout_width="175dp"
+            android:layout_width="120dp"
             android:gravity="center_vertical"
             android:layout_height="match_parent"
             android:paddingHorizontal="10dp"
@@ -62,7 +62,7 @@
         <TextView
             android:background="@drawable/border"
             android:id="@+id/tv_terjual"
-            android:layout_width="175dp"
+            android:layout_width="120dp"
             android:gravity="center_vertical"
             android:layout_height="match_parent"
             android:paddingHorizontal="10dp"

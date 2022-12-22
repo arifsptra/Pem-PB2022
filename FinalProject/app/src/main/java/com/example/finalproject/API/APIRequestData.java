@@ -28,7 +28,6 @@ public interface APIRequestData {
             @Field("satuan") String satuan,
             @Field("harga") String harga,
             @Field("stok") String stok,
-            @Field("gambar") String gambar,
             @Field("terjual") String terjual
     );
 

@@ -34,7 +34,6 @@ public class Transaksi extends AppCompatActivity {
     private List<DataModelBarang> listData;
     private SwipeRefreshLayout srlData;
     private ProgressBar pbData;
-    FloatingActionButton fabTambah;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +45,6 @@ public class Transaksi extends AppCompatActivity {
         rvData = findViewById(R.id.rv_data);
         lmData = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         rvData.setLayoutManager(lmData);
-        fabTambah = findViewById(R.id.fab_tambah);
 
         srlData.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -54,13 +52,6 @@ public class Transaksi extends AppCompatActivity {
                 srlData.setRefreshing(true);
                 tampilData();
                 srlData.setRefreshing(false);
-            }
-        });
-
-        fabTambah.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Transaksi.this, Master.class));
             }
         });
     }

@@ -32,13 +32,13 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.HolderData> {
+public class AdapterMaster extends RecyclerView.Adapter<AdapterMaster.HolderData> {
     private Context context;
     private List<DataModelBarang> listModel;
     private List<DataModelBarang> listBarang;
     private String idBarang;
 
-    public AdapterBarang(Context context, List<DataModelBarang> listModel) {
+    public AdapterMaster(Context context, List<DataModelBarang> listModel) {
         this.context = context;
         this.listModel = listModel;
     }
@@ -61,28 +61,6 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.HolderData
         holder.tvHarga.setText(dm.getHarga());
         holder.tvStok.setText(dm.getStok());
         holder.tvTerjual.setText(dm.getTerjual());
-        holder.listLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String varKodeBarang = listModel.get(position).getKode();
-                String varNamaBarang = listModel.get(position).getNama();
-                String varSatuanBarang = listModel.get(position).getSatuan();
-                String varHargaBarang = listModel.get(position).getHarga();
-                String varStokBarang = listModel.get(position).getStok();
-                String varTerjual = listModel.get(position).getTerjual();
-                String varGambar = listModel.get(position).getGambar();
-
-                Intent kirim = new Intent(context, Detail.class);
-                kirim.putExtra("xKode", varKodeBarang);
-                kirim.putExtra("xNama", varNamaBarang);
-                kirim.putExtra("xSatuan", varSatuanBarang);
-                kirim.putExtra("xHarga", varHargaBarang);
-                kirim.putExtra("xStok", varStokBarang);
-                kirim.putExtra("xTerjual", varTerjual);
-                kirim.putExtra("xGambar", varGambar);
-                context.startActivity(kirim);
-            }
-        });
         holder.listLayout.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity.Update"
+    tools:context=".Activity.Tambah"
     android:padding="10dp">
 
     <TextView
@@ -17,6 +17,14 @@
         android:textSize="22sp"
         android:textStyle="bold"
         android:layout_marginVertical="20dp"/>
+
+    <EditText
+        android:id="@+id/et_kode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kode Barang"
+        android:textSize="20sp"
+        android:inputType="text"/>
 
     <EditText
         android:id="@+id/et_nama"
@@ -51,9 +59,9 @@
         android:inputType="text"/>
 
     <Button
-        android:id="@+id/b_ubah"
+        android:id="@+id/b_simpan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="UBAH"
+        android:text="Simpan"
         android:layout_marginTop="20dp"/>
 </LinearLayout>

@@ -23,17 +23,14 @@ import retrofit2.Response;
 
 public class Detail extends AppCompatActivity {
 
-    private String xKode, xNama, xSatuan, xHarga, xStok, xGambar, xTerjual;
-    private TextView tvKode, tvNama, tvSatuan, tvHarga, tvStok, tvGambar, count, tvTotal, tvTerjual;
-    private Button bUbah;
-    private String yKode, yNama, ySatuan, yHarga, yStok, yGambar, yTerjual;
+    private String xKode, xNama, xSatuan, xHarga, xStok, xTerjual;
+    private TextView tvKode, tvNama, tvSatuan, tvHarga, tvStok, count, tvTotal, tvTerjual;
+    private String yKode, yNama, ySatuan, yHarga, yStok, yTerjual;
     private EditText etNamaPelanggan, etAlamatPelanggan;
     private Button btn_minus, btn_plus, btn_beli;
     int sisaStokInt;
     int jumlah=0;
     int priceView=0;
-
-//    DecimalFormat formatter = new DecimalFormat("#,###");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +46,6 @@ public class Detail extends AppCompatActivity {
         xSatuan = terima.getStringExtra("xSatuan");
         xHarga = terima.getStringExtra("xHarga");
         xStok = terima.getStringExtra("xStok");
-//        xGambar = terima.getStringExtra("xGambar");
         xTerjual = terima.getStringExtra("xTerjual");
 
         tvKode = findViewById(R.id.tv_kode);
@@ -63,7 +59,6 @@ public class Detail extends AppCompatActivity {
         btn_plus = findViewById(R.id.btn_plus);
         btn_minus = findViewById(R.id.btn_minus);
         btn_beli = findViewById(R.id.btn_beli);
-//        etGambar = findViewById(R.id.et_gambar);
 
         tvKode.setText(xKode);
         tvNama.setText(xNama);
@@ -71,7 +66,6 @@ public class Detail extends AppCompatActivity {
         tvHarga.setText(xHarga);
         tvStok.setText(xStok);
         tvTerjual.setText(xTerjual);
-//        etGambar.setText(xGambar);
 
         sisaStokInt = Integer.valueOf(xStok);
 
