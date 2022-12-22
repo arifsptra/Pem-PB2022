@@ -36,7 +36,6 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.HolderData
     private Context context;
     private List<DataModelBarang> listModel;
     private List<DataModelBarang> listBarang;
-    private ArrayList<DataModelBarang> arrayList;
     private String idBarang;
 
     public AdapterBarang(Context context, List<DataModelBarang> listModel) {
@@ -62,7 +61,7 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.HolderData
         holder.tvHarga.setText(dm.getHarga());
         holder.tvStok.setText(dm.getStok());
         holder.tvTerjual.setText(dm.getTerjual());
-//        holder.ivGambar.setImageResource(0);
+//        holder.ivGambar.setImageResource(Integer.parseInt(dm.getGambar()));
         holder.listLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +71,7 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.HolderData
                 String varHargaBarang = listModel.get(position).getHarga();
                 String varStokBarang = listModel.get(position).getStok();
                 String varTerjual = listModel.get(position).getTerjual();
+                String varGambar = listModel.get(position).getGambar();
 
                 Intent kirim = new Intent(context, Detail.class);
                 kirim.putExtra("xKode", varKodeBarang);
@@ -80,7 +80,7 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.HolderData
                 kirim.putExtra("xHarga", varHargaBarang);
                 kirim.putExtra("xStok", varStokBarang);
                 kirim.putExtra("xTerjual", varTerjual);
-//                    kirim.putExtra("xGambar", varGambarBarang);
+                kirim.putExtra("xGambar", varGambar);
                 context.startActivity(kirim);
             }
         });
@@ -151,7 +151,7 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.HolderData
                         String varSatuanBarang = listBarang.get(0).getSatuan();
                         String varHargaBarang = listBarang.get(0).getHarga();
                         String varStokBarang = listBarang.get(0).getStok();
-//                    String varGambarBarang = listBarang.get(0).getGambar();
+                        String varGambarBarang = listBarang.get(0).getGambar();
                         String varTerjual = listBarang.get(0).getTerjual();
 
                         Intent kirim = new Intent(context, Update.class);
@@ -161,7 +161,7 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.HolderData
                         kirim.putExtra("xHarga", varHargaBarang);
                         kirim.putExtra("xStok", varStokBarang);
                         kirim.putExtra("xTerjual", varTerjual);
-//                    kirim.putExtra("xGambar", varGambarBarang);
+                        kirim.putExtra("xGambar", varGambarBarang);
                         context.startActivity(kirim);
 
                         //Toast.makeText(context, "Kode: "+kode+" | Pesan: "+pesan+, Toast.LENGTH_SHORT).show();
@@ -182,20 +182,20 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.HolderData
     }
 
     public class HolderData extends RecyclerView.ViewHolder {
-        TextView tvKode, tvNama, tvSatuan, tvHarga, tvStok, tvSisaStok, tvTerjual;
-//        ImageView ivGambar;
+        TextView tvKode, tvNama, tvSatuan, tvHarga, tvStok, tvTerjual;
+        ImageView ivGambar;
         LinearLayout listLayout;
 
         public HolderData(@NonNull View v) {
             super(v);
 
+            ivGambar = v.findViewById(R.id.iv_barang);
             listLayout = v.findViewById(R.id.list_item);
             tvKode = v.findViewById(R.id.tv_kode);
             tvNama = v.findViewById(R.id.tv_nama);
             tvSatuan = v.findViewById(R.id.tv_satuan);
             tvHarga = v.findViewById(R.id.tv_harga);
             tvStok = v.findViewById(R.id.tv_stok);
-//            ivGambar = v.findViewById(R.id.iv_barang);
             tvTerjual = v.findViewById(R.id.tv_terjual);
         }
     }
