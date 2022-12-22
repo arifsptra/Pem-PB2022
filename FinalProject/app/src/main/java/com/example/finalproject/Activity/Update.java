@@ -24,7 +24,7 @@ public class Update extends AppCompatActivity {
     private String xKode, xNama, xSatuan, xHarga, xStok, xGambar;
     private EditText etKode, etNama, etSatuan, etHarga, etStok, etGambar;
     private Button bUbah;
-    private String yKode, yNama, ySatuan, yHarga, yStok, yGambar;
+    private String yKode, yNama, ySatuan, yHarga, yStok, yGambar, ySisaStok, yTerjual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +62,8 @@ public class Update extends AppCompatActivity {
                 ySatuan = etSatuan.getText().toString();
                 yHarga = etHarga.getText().toString();
                 yStok = etStok.getText().toString();
+                ySisaStok = yStok;
+                yTerjual = "0";
 //                yGambar = etGambar.getText().toString();
 
                 updateData();
@@ -70,7 +72,7 @@ public class Update extends AppCompatActivity {
     }
     private void updateData(){
         APIRequestData ardData = RetrofitServer.konekRetrofit().create(APIRequestData.class);
-        Call<ResponseModelBarang> ubahData = ardData.ardUpdateData(xKode, yNama, ySatuan, yHarga, yStok);
+        Call<ResponseModelBarang> ubahData = ardData.ardUpdateData(xKode, yNama, ySatuan, yHarga, yStok, ySisaStok, yTerjual);
 
         ubahData.enqueue(new Callback<ResponseModelBarang>() {
             @Override

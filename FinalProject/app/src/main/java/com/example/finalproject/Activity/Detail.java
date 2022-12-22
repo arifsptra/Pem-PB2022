@@ -12,10 +12,10 @@ import com.example.finalproject.R;
 
 public class Detail extends AppCompatActivity {
 
-    private String xKode, xNama, xSatuan, xHarga, xStok, xGambar;
-    private TextView tvKode, tvNama, tvSatuan, tvHarga, tvStok, tvGambar;
+    private String xKode, xNama, xSatuan, xHarga, xStok, xGambar, xSisaStok, xTerjual;
+    private TextView tvKode, tvNama, tvSatuan, tvHarga, tvStok, tvGambar, tvSisaStok;
     private Button bUbah;
-    private String yKode, yNama, ySatuan, yHarga, yStok, yGambar;
+    private String yKode, yNama, ySatuan, yHarga, yStok, yGambar, ySisaStok, yTerjual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,8 @@ public class Detail extends AppCompatActivity {
         xHarga = terima.getStringExtra("xHarga");
         xStok = terima.getStringExtra("xStok");
 //        xGambar = terima.getStringExtra("xGambar");
+        xSisaStok = terima.getStringExtra("xSisaStok");
+        xTerjual = terima.getStringExtra("xTerjual");
 
 //        etKode = findViewById(R.id.et_kode);
         tvNama = findViewById(R.id.tv_nama);
@@ -36,6 +38,7 @@ public class Detail extends AppCompatActivity {
         tvHarga = findViewById(R.id.tv_harga);
 //        tvStok = findViewById(R.id.tv_stok);
 //        etGambar = findViewById(R.id.et_gambar);
+//        tvSisaStok = findViewById(R.id.tv_sisa_stok);
 
 //        etKode.setText(xKode);
         tvNama.setText(xNama);
@@ -43,6 +46,7 @@ public class Detail extends AppCompatActivity {
         tvHarga.setText(xHarga);
 //        tvStok.setText(xStok);
 //        etGambar.setText(xGambar);
+//        tvSisaStok.setText(tvSisaStok);
 
     }
 }

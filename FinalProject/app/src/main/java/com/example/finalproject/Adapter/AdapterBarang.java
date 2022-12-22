@@ -61,6 +61,8 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.HolderData
         holder.tvSatuan.setText(dm.getSatuan());
         holder.tvHarga.setText(dm.getHarga());
         holder.tvStok.setText(dm.getStok());
+        holder.tvSisaStok.setText(dm.getSisa_stok());
+        holder.tvTerjual.setText(dm.getTerjual());
 //        holder.ivGambar.setImageResource(0);
         holder.listLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +72,8 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.HolderData
                 String varSatuanBarang = listModel.get(position).getSatuan();
                 String varHargaBarang = listModel.get(position).getHarga();
                 String varStokBarang = listModel.get(position).getStok();
+                String varSisaStok = listModel.get(position).getSisa_stok();
+                String varTerjual = listModel.get(position).getTerjual();
 
                 Intent kirim = new Intent(context, Detail.class);
                 kirim.putExtra("xKode", varKodeBarang);
@@ -77,6 +81,8 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.HolderData
                 kirim.putExtra("xSatuan", varSatuanBarang);
                 kirim.putExtra("xHarga", varHargaBarang);
                 kirim.putExtra("xStok", varStokBarang);
+                kirim.putExtra("xSisaStok", varSisaStok);
+                kirim.putExtra("xTerjual", varTerjual);
 //                    kirim.putExtra("xGambar", varGambarBarang);
                 context.startActivity(kirim);
             }
@@ -110,6 +116,7 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.HolderData
 
                 return false;
             }
+
             private void deleteData(){
                 APIRequestData ardData = RetrofitServer.konekRetrofit().create(APIRequestData.class);
                 Call<ResponseModelBarang> hapusData = ardData.ardHapusData(idBarang);
@@ -148,6 +155,8 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.HolderData
                         String varHargaBarang = listBarang.get(0).getHarga();
                         String varStokBarang = listBarang.get(0).getStok();
 //                    String varGambarBarang = listBarang.get(0).getGambar();
+                        String varSisaStok = listBarang.get(0).getSisa_stok();
+                        String varTerjual = listBarang.get(0).getTerjual();
 
                         Intent kirim = new Intent(context, Update.class);
                         kirim.putExtra("xKode", varKodeBarang);
@@ -155,6 +164,8 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.HolderData
                         kirim.putExtra("xSatuan", varSatuanBarang);
                         kirim.putExtra("xHarga", varHargaBarang);
                         kirim.putExtra("xStok", varStokBarang);
+                        kirim.putExtra("xSisaStok", varSisaStok);
+                        kirim.putExtra("xTerjual", varTerjual);
 //                    kirim.putExtra("xGambar", varGambarBarang);
                         context.startActivity(kirim);
 
@@ -176,7 +187,7 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.HolderData
     }
 
     public class HolderData extends RecyclerView.ViewHolder {
-        TextView tvKode, tvNama, tvSatuan, tvHarga, tvStok;
+        TextView tvKode, tvNama, tvSatuan, tvHarga, tvStok, tvSisaStok, tvTerjual;
 //        ImageView ivGambar;
         LinearLayout listLayout;
 
@@ -190,6 +201,8 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.HolderData
             tvHarga = v.findViewById(R.id.tv_harga);
             tvStok = v.findViewById(R.id.tv_stok);
 //            ivGambar = v.findViewById(R.id.iv_barang);
+            tvSisaStok = v.findViewById(R.id.tv_sisa_stok);
+            tvTerjual = v.findViewById(R.id.tv_terjual);
         }
     }
 }

@@ -1,7 +1,7 @@
 package com.example.finalproject.Model;
 
 public class DataModelBarang {
-    private String kode, nama, satuan, harga, stok;
+    private String kode, nama, satuan, harga, stok, sisa_stok, terjual;
 
     public String getKode() {
         return kode;
@@ -50,4 +50,21 @@ public class DataModelBarang {
 //    public void setGambar(String gambar) {
 //        this.gambar = gambar;
 //    }
+
+
+    public String getSisa_stok() {
+        return sisa_stok;
+    }
+
+    public void setSisa_stok(String sisa_stok) {
+        this.sisa_stok = sisa_stok;
+    }
+
+    public String getTerjual() {
+        return terjual;
+    }
+
+    public void setTerjual(String terjual) {
+        this.terjual = terjual;
+    }
 }

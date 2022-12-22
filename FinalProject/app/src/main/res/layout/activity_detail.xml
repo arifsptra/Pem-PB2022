@@ -137,7 +137,7 @@
             android:text="Stok"
             android:textStyle="bold"/>
         <TextView
-            android:id="@+id/sisaStok"
+            android:id="@+id/tv_sisa_stok"
             android:layout_width="200dp"
             android:layout_height="20dp"
             android:textSize="16sp"

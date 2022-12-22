@@ -28,7 +28,9 @@ public interface APIRequestData {
             @Field("satuan") String satuan,
             @Field("harga") String harga,
             @Field("stok") String stok,
-            @Field("gambar") String gambar
+            @Field("gambar") String gambar,
+            @Field("sisa_stok") String sisa_stok,
+            @Field("terjual") String terjual
     );
 
     @FormUrlEncoded
@@ -50,7 +52,9 @@ public interface APIRequestData {
             @Field("nama") String nama,
             @Field("satuan") String satuan,
             @Field("harga") String harga,
-            @Field("stok") String stok
-//            @Field("gambar") String gambar
+            @Field("stok") String stok,
+//            @Field("gambar") String gambar,
+            @Field("sisa_stok") String sisa_stok,
+            @Field("terjual") String terjual
     );
 }
