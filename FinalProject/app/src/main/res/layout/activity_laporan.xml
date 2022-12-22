@@ -84,7 +84,7 @@
             </TableRow>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerLaporan"
+                android:id="@+id/rv_data"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:listitem="@layout/laporan_item">

@@ -50,7 +50,7 @@
             android:layout_column="1"/>
         <TextView
             android:background="@drawable/border"
-            android:id="@+id/tv_jumlah"
+            android:id="@+id/tv_sisa_stok"
             android:layout_width="175dp"
             android:gravity="center_vertical"
             android:layout_height="match_parent"
