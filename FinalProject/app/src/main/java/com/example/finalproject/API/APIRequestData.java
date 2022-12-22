@@ -55,4 +55,17 @@ public interface APIRequestData {
 //            @Field("gambar") String gambar,
             @Field("terjual") String terjual
     );
+
+    @FormUrlEncoded
+    @POST("tambahPenjualan.php")
+    Call<ResponseModelBarang> ardCreatePenjualanData(
+            @Field("id") int id,
+            @Field("kode_barang") String kode_barang,
+            @Field("nama_pelanggan") String nama_pelanggan,
+            @Field("alamat_pelanggan") String alamat_pelanggan,
+            @Field("nama_barang") String nama_barang,
+            @Field("total_beli") String total_beli,
+            @Field("harga_awal") String harga_awal,
+            @Field("total_bayar") String total_bayar
+    );
 }

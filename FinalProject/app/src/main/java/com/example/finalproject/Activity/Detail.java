@@ -33,7 +33,7 @@ public class Detail extends AppCompatActivity {
     int jumlah=0;
     int priceView=0;
 
-    DecimalFormat formatter = new DecimalFormat("#,###");
+//    DecimalFormat formatter = new DecimalFormat("#,###");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +52,7 @@ public class Detail extends AppCompatActivity {
 //        xGambar = terima.getStringExtra("xGambar");
         xTerjual = terima.getStringExtra("xTerjual");
 
-//        etKode = findViewById(R.id.et_kode);
+        tvKode = findViewById(R.id.tv_kode);
         tvNama = findViewById(R.id.tv_nama);
         tvSatuan = findViewById(R.id.tv_satuan);
         tvHarga = findViewById(R.id.tv_harga);
@@ -65,7 +65,7 @@ public class Detail extends AppCompatActivity {
         btn_beli = findViewById(R.id.btn_beli);
 //        etGambar = findViewById(R.id.et_gambar);
 
-
+        tvKode.setText(xKode);
         tvNama.setText(xNama);
         tvSatuan.setText(xSatuan);
         tvHarga.setText(xHarga);
@@ -82,7 +82,7 @@ public class Detail extends AppCompatActivity {
                 jumlah++;
                 total_harga();
                 priceView = basePrice*jumlah;
-                tvTotal.setText("Rp. "+formatter.format(priceView));
+                tvTotal.setText(String.valueOf(priceView));
                 sisaStokInt-=1;
                 tvStok.setText(String.valueOf(sisaStokInt));
             }
@@ -97,7 +97,7 @@ public class Detail extends AppCompatActivity {
                     jumlah--;
                     total_harga();
                     priceView = basePrice*jumlah;
-                    tvTotal.setText("Rp. "+formatter.format(priceView));
+                    tvTotal.setText(String.valueOf(priceView));
                     sisaStokInt+=1;
                     tvStok.setText(String.valueOf(sisaStokInt));
                 }
@@ -107,7 +107,7 @@ public class Detail extends AppCompatActivity {
         btn_beli.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                yKode = etKode.getText().toString();
+                yKode = tvKode.getText().toString();
                 yNama = tvNama.getText().toString();
                 ySatuan = tvSatuan.getText().toString();
                 yHarga = tvHarga.getText().toString();
@@ -116,29 +116,22 @@ public class Detail extends AppCompatActivity {
 
                 updateData();
 
-//                String gambarMotor = gambarMotorImage.getResources().toString();
-//                String namaMotor = namaMotorText.getText().toString();
-//                String totalHarga = String.valueOf(priceView);
-//                String jumlahPesan = String.valueOf(jumlah);
-//                String hargaAwal = hargaMotorText.getText().toString();
-//                String namaPelanggan = namaPelangganText.getText().toString();
-//                String pekerjaanPelanggan = pekerjaanPelangganText.getText().toString();
-//                String alamatPelanggan = alamatPelangganText.getText().toString();
-//                String totalBayar = String.valueOf(priceView+(priceView*10/100));
-//                dbh = new DatabaseHelper(MainActivityDetail.this);
-//                dbh.tambahdata(hargaAwal, namaMotor, satuan, kodeMotorText.getText().toString(), 1, priceView, jumlahPesan, 100);
+                String kodeBarang = tvKode.getText().toString();
+                String namaBarang = tvNama.getText().toString();
+                String totalBeli = count.getText().toString();
+                String hargaAwal = tvHarga.getText().toString();
+                String totalBayar = tvTotal.getText().toString();
+                String namaPelanggan = etNamaPelanggan.getText().toString();
+                String alamatPelanggan = etAlamatPelanggan.getText().toString();
+
                 Intent intent = new Intent(Detail.this, CetakPesanan.class);
-//                intent.putExtra("gambar_motor", gambarMotor);
-//                intent.putExtra("nama_pelanggan", namaPelanggan);
-//                intent.putExtra("pekerjaan_pelanggan", pekerjaanPelanggan);
-//                intent.putExtra("alamat_pelanggan", alamatPelanggan);
-//                intent.putExtra("nama_motor", namaMotor);
-//                intent.putExtra("total_harga", totalHarga);
-//                intent.putExtra("jumlah_pesan", jumlahPesan);
-//                intent.putExtra("harga_awal", hargaAwal);
-//                intent.putExtra("total_bayar", totalBayar);
-//                intent.putExtra("sisa_stok", sisaStok);
-//                intent.putExtra("stok_motor", stok.getText().toString());
+                intent.putExtra("kode_barang", kodeBarang);
+                intent.putExtra("nama_pelanggan", namaPelanggan);
+                intent.putExtra("alamat_pelanggan", alamatPelanggan);
+                intent.putExtra("nama_barang", namaBarang);
+                intent.putExtra("total_beli", totalBeli);
+                intent.putExtra("harga_awal", hargaAwal);
+                intent.putExtra("total_bayar", totalBayar);
                 startActivity(intent);
             }
         });
@@ -156,7 +149,7 @@ public class Detail extends AppCompatActivity {
                 String kode = response.body().getKode();
                 String pesan = response.body().getPesan();
 
-                Toast.makeText(Detail.this, "Kode: "+kode+" | Pesan: "+pesan, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Detail.this, "Kode: "+kode+" | Pesan: "+pesan, Toast.LENGTH_SHORT).show();
                 finish();
             }
 

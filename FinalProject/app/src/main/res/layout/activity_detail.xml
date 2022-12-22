@@ -149,6 +149,14 @@
             android:text="Rp. 0"/>
     </LinearLayout>
     <TextView
+        android:id="@+id/tv_kode"
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="0"
+        android:visibility="gone"/>
+    <TextView
         android:id="@+id/tv_terjual"
         android:layout_width="200dp"
         android:layout_height="20dp"
