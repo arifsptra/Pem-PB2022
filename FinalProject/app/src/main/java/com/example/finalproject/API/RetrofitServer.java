@@ -18,7 +18,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitServer {
-    private static final String baseURL = "http://192.168.18.208/penjualan/";
+    private static final String baseURL = "http://192.168.70.251/penjualan/";
     private static Retrofit retro;
 
     public static Retrofit konekRetrofit(){
@@ -31,6 +31,7 @@ public class RetrofitServer {
                     .baseUrl(baseURL)
 //                    .client(client)
                     .addConverterFactory(GsonConverterFactory.create(gson))
+//                    .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
         return retro;

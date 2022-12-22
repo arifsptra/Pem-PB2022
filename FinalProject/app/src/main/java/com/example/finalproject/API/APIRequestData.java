@@ -50,7 +50,7 @@ public interface APIRequestData {
             @Field("nama") String nama,
             @Field("satuan") String satuan,
             @Field("harga") String harga,
-            @Field("stok") String stok,
-            @Field("gambar") String gambar
+            @Field("stok") String stok
+//            @Field("gambar") String gambar
     );
 }

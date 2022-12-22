@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.window.SplashScreen;
 
 import com.example.finalproject.API.APIRequestData;
 import com.example.finalproject.API.RetrofitServer;
@@ -36,14 +37,14 @@ public class Update extends AppCompatActivity {
         xSatuan = terima.getStringExtra("xSatuan");
         xHarga = terima.getStringExtra("xHarga");
         xStok = terima.getStringExtra("xStok");
-        xGambar = terima.getStringExtra("xGambar");
+//        xGambar = terima.getStringExtra("xGambar");
 
 //        etKode = findViewById(R.id.et_kode);
         etNama = findViewById(R.id.et_nama);
         etSatuan = findViewById(R.id.et_satuan);
         etHarga = findViewById(R.id.et_harga);
         etStok = findViewById(R.id.et_stok);
-        etGambar = findViewById(R.id.et_gambar);
+//        etGambar = findViewById(R.id.et_gambar);
         bUbah = findViewById(R.id.b_ubah);
 
 //        etKode.setText(xKode);
@@ -51,7 +52,7 @@ public class Update extends AppCompatActivity {
         etSatuan.setText(xSatuan);
         etHarga.setText(xHarga);
         etStok.setText(xStok);
-        etGambar.setText(xGambar);
+//        etGambar.setText(xGambar);
 
         bUbah.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +62,7 @@ public class Update extends AppCompatActivity {
                 ySatuan = etSatuan.getText().toString();
                 yHarga = etHarga.getText().toString();
                 yStok = etStok.getText().toString();
-                yGambar = etGambar.getText().toString();
+//                yGambar = etGambar.getText().toString();
 
                 updateData();
             }
@@ -69,7 +70,7 @@ public class Update extends AppCompatActivity {
     }
     private void updateData(){
         APIRequestData ardData = RetrofitServer.konekRetrofit().create(APIRequestData.class);
-        Call<ResponseModelBarang> ubahData = ardData.ardUpdateData(xKode, yNama, ySatuan, yHarga, yStok, yGambar);
+        Call<ResponseModelBarang> ubahData = ardData.ardUpdateData(xKode, yNama, ySatuan, yHarga, yStok);
 
         ubahData.enqueue(new Callback<ResponseModelBarang>() {
             @Override
