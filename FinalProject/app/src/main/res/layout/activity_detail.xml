@@ -70,21 +70,6 @@
             android:layout_width="100dp"
             android:layout_height="20dp"
             android:textSize="16sp"
-            android:text="Pekerjaan"
-            android:textStyle="bold"/>
-        <EditText
-            android:id="@+id/pekerjaanPelangganEditText"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="20dp"
-            android:textSize="16sp"
             android:text="Alamat"
             android:textStyle="bold"/>
         <EditText
@@ -156,11 +141,19 @@
             android:text="Total"
             android:textStyle="bold"/>
         <TextView
-            android:id="@+id/totalBeli"
+            android:id="@+id/tv_total_harga"
             android:layout_width="200dp"
             android:layout_height="20dp"
             android:textSize="16sp"
             android:textStyle="bold"
             android:text="Rp. 0"/>
     </LinearLayout>
+    <TextView
+        android:id="@+id/tv_terjual"
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="0"
+        android:visibility="gone"/>
 </LinearLayout>
