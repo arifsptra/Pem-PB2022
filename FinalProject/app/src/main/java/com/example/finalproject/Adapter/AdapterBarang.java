@@ -70,7 +70,6 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.HolderData
                 String varHargaBarang = listModel.get(position).getHarga();
                 String varStokBarang = listModel.get(position).getStok();
                 String varTerjual = listModel.get(position).getTerjual();
-                String varGambar = listModel.get(position).getGambar();
 
                 Intent kirim = new Intent(context, Detail.class);
                 kirim.putExtra("xKode", varKodeBarang);
@@ -79,7 +78,6 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.HolderData
                 kirim.putExtra("xHarga", varHargaBarang);
                 kirim.putExtra("xStok", varStokBarang);
                 kirim.putExtra("xTerjual", varTerjual);
-                kirim.putExtra("xGambar", varGambar);
                 context.startActivity(kirim);
             }
         });
@@ -150,7 +148,6 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.HolderData
                         String varSatuanBarang = listBarang.get(0).getSatuan();
                         String varHargaBarang = listBarang.get(0).getHarga();
                         String varStokBarang = listBarang.get(0).getStok();
-                        String varGambarBarang = listBarang.get(0).getGambar();
                         String varTerjual = listBarang.get(0).getTerjual();
 
                         Intent kirim = new Intent(context, Update.class);
@@ -160,7 +157,6 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.HolderData
                         kirim.putExtra("xHarga", varHargaBarang);
                         kirim.putExtra("xStok", varStokBarang);
                         kirim.putExtra("xTerjual", varTerjual);
-                        kirim.putExtra("xGambar", varGambarBarang);
                         context.startActivity(kirim);
 
                         //Toast.makeText(context, "Kode: "+kode+" | Pesan: "+pesan+, Toast.LENGTH_SHORT).show();

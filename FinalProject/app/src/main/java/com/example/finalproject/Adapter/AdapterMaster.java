@@ -128,7 +128,6 @@ public class AdapterMaster extends RecyclerView.Adapter<AdapterMaster.HolderData
                         String varSatuanBarang = listBarang.get(0).getSatuan();
                         String varHargaBarang = listBarang.get(0).getHarga();
                         String varStokBarang = listBarang.get(0).getStok();
-                        String varGambarBarang = listBarang.get(0).getGambar();
                         String varTerjual = listBarang.get(0).getTerjual();
 
                         Intent kirim = new Intent(context, Update.class);
@@ -138,7 +137,6 @@ public class AdapterMaster extends RecyclerView.Adapter<AdapterMaster.HolderData
                         kirim.putExtra("xHarga", varHargaBarang);
                         kirim.putExtra("xStok", varStokBarang);
                         kirim.putExtra("xTerjual", varTerjual);
-                        kirim.putExtra("xGambar", varGambarBarang);
                         context.startActivity(kirim);
 
                         //Toast.makeText(context, "Kode: "+kode+" | Pesan: "+pesan+, Toast.LENGTH_SHORT).show();

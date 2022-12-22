@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "553276367436",
+    "firebase_url": "https://finalproject-d2dcc-default-rtdb.firebaseio.com",
+    "project_id": "finalproject-d2dcc",
+    "storage_bucket": "finalproject-d2dcc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553276367436:android:54706f910bccf54b4a4ae9",
+        "android_client_info": {
+          "package_name": "com.example.finalproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "553276367436-6p1ue9e06r7re687km8o5i9j21i9l5a8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMFFWdCu1K4v65vTO_2I-NehxpBzsYXr0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "553276367436-6p1ue9e06r7re687km8o5i9j21i9l5a8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

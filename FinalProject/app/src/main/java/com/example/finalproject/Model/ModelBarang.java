@@ -1,7 +1,7 @@
 package com.example.finalproject.Model;
 
-public class DataModelBarang {
-    private String kode, nama, satuan, harga, stok, terjual;
+public class ModelBarang {
+    String kode, nama, satuan, harga, stok, terjual;
 
     public String getKode() {
         return kode;

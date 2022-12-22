@@ -9,8 +9,12 @@ import android.widget.Toast;
 
 import com.example.finalproject.API.APIRequestData;
 import com.example.finalproject.API.RetrofitServer;
+import com.example.finalproject.Model.DataModelBarang;
+import com.example.finalproject.Model.DataModelLaporan;
 import com.example.finalproject.Model.ResponseModelBarang;
 import com.example.finalproject.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -21,6 +25,8 @@ public class CetakPesanan extends AppCompatActivity {
     private String xKodeBarang, xNamaPelanggan, xAlamatPelanggan, xNamaBarang, xTotalBeli, xHargaAwal, xTotalBayar;
     private TextView tvKodeBarang, tvNamaPelanggan, tvAlamatPelanggan, tvNamaBarang, tvTotalBeli, tvHargaAwal, tvTotalBayar;
     private int xId;
+    private DataModelLaporan modelBarang;
+    private DatabaseReference dbr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +40,8 @@ public class CetakPesanan extends AppCompatActivity {
         tvTotalBeli = findViewById(R.id.tv_total_beli);
         tvHargaAwal = findViewById(R.id.tv_harga_awal);
         tvTotalBayar = findViewById(R.id.tv_total_bayar);
+        dbr = FirebaseDatabase.getInstance().getReference().child("penjualan");
+        modelBarang = new DataModelLaporan();
 
         Intent terima = getIntent();
         xId = terima.getIntExtra("id", -1);
@@ -53,6 +61,18 @@ public class CetakPesanan extends AppCompatActivity {
         tvHargaAwal.setText(xHargaAwal);
         tvTotalBayar.setText(xTotalBayar);
 
+        // simpan data ke firebase
+        modelBarang.setKode_barang(xKodeBarang);
+        modelBarang.setNama_pelanggan(xNamaPelanggan);
+        modelBarang.setAlamat_pelanggan(xAlamatPelanggan);
+        modelBarang.setNama_barang(xNamaBarang);
+        modelBarang.setTotal_beli(xTotalBeli);
+        modelBarang.setHarga_awal(xHargaAwal);
+        modelBarang.setTotal_bayar(xTotalBayar);
+
+        dbr.push().setValue(modelBarang);
+
+        // simpan data ke mysql
         createPenjualanData();
     }
     private void createPenjualanData(){

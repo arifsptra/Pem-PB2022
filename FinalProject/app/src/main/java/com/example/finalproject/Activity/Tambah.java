@@ -10,8 +10,11 @@ import android.widget.Toast;
 
 import com.example.finalproject.API.APIRequestData;
 import com.example.finalproject.API.RetrofitServer;
+import com.example.finalproject.Model.DataModelBarang;
 import com.example.finalproject.Model.ResponseModelBarang;
 import com.example.finalproject.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -20,9 +23,10 @@ import retrofit2.Response;
 public class Tambah extends AppCompatActivity {
 
     EditText etKode, etNama, etSatuan, etHarga, etStok;
-    String kode, nama, satuan, harga, stok, gambar, terjual;
+    String kode, nama, satuan, harga, stok, terjual;
     Button bSimpan;
-
+    DatabaseReference dbr;
+    DataModelBarang modelBarang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,15 +40,26 @@ public class Tambah extends AppCompatActivity {
         etStok = findViewById(R.id.et_stok);
         bSimpan = findViewById(R.id.b_simpan);
 
+        dbr = FirebaseDatabase.getInstance().getReference().child("barang");
+        modelBarang = new DataModelBarang();
+
         bSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 kode = etKode.getText().toString();
                 nama = etNama.getText().toString();
                 satuan = etSatuan.getText().toString();
                 harga = etHarga.getText().toString();
                 stok = etStok.getText().toString();
                 terjual = "0";
+
+                modelBarang.setKode(kode);
+                modelBarang.setNama(nama);
+                modelBarang.setSatuan(satuan);
+                modelBarang.setHarga(harga);
+                modelBarang.setStok(stok);
+                modelBarang.setTerjual(terjual);
 
                 if(kode.trim().equals("")){
                     etKode.setError("Kode Harus Diisi");
@@ -57,6 +72,10 @@ public class Tambah extends AppCompatActivity {
                 }else if(stok.trim().equals("")){
                     etStok.setError("Stok Harus Diisi");
                 }else{
+                    // simpan data untuk firebase
+                    dbr.push().setValue(modelBarang);
+
+                    // simpan data untuk mysql
                     createData();
                 }
             }
