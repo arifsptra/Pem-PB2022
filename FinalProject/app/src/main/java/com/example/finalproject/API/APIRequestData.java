@@ -29,7 +29,6 @@ public interface APIRequestData {
             @Field("harga") String harga,
             @Field("stok") String stok,
             @Field("gambar") String gambar,
-            @Field("sisa_stok") String sisa_stok,
             @Field("terjual") String terjual
     );
 
@@ -54,7 +53,6 @@ public interface APIRequestData {
             @Field("harga") String harga,
             @Field("stok") String stok,
 //            @Field("gambar") String gambar,
-            @Field("sisa_stok") String sisa_stok,
             @Field("terjual") String terjual
     );
 }

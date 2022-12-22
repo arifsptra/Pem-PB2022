@@ -20,7 +20,7 @@ import retrofit2.Response;
 public class Master extends AppCompatActivity {
 
     EditText etKode, etNama, etSatuan, etHarga, etStok, etGambar;
-    String kode, nama, satuan, harga, stok, gambar, sisa_stok, terjual;
+    String kode, nama, satuan, harga, stok, gambar, terjual;
     Button bSimpan;
 
     @Override
@@ -45,7 +45,6 @@ public class Master extends AppCompatActivity {
                 harga = etHarga.getText().toString();
                 stok = etStok.getText().toString();
                 gambar = etGambar.getText().toString();
-                sisa_stok = etStok.getText().toString();
                 terjual = "0";
 
                 if(kode.trim().equals("")){
@@ -67,7 +66,7 @@ public class Master extends AppCompatActivity {
 
     private void createData(){
         APIRequestData ardData = RetrofitServer.konekRetrofit().create(APIRequestData.class);
-        Call<ResponseModelBarang> simpanData = ardData.ardCreateData(kode, nama, satuan, harga, stok, gambar, sisa_stok, terjual);
+        Call<ResponseModelBarang> simpanData = ardData.ardCreateData(kode, nama, satuan, harga, stok, gambar, terjual);
 
         simpanData.enqueue(new Callback<ResponseModelBarang>() {
             @Override
