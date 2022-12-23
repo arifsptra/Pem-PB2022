@@ -160,8 +160,10 @@
         android:id="@+id/tv_terjual"
         android:layout_width="200dp"
         android:layout_height="20dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:text="0"
         android:visibility="gone"/>
+    <TextView
+        android:id="@+id/tv_key"
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:text="0"/>
 </LinearLayout>

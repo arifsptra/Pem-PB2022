@@ -12,8 +12,12 @@ import android.widget.Toast;
 
 import com.example.finalproject.API.APIRequestData;
 import com.example.finalproject.API.RetrofitServer;
+import com.example.finalproject.Model.ModelBarang;
 import com.example.finalproject.Model.ResponseModelBarang;
 import com.example.finalproject.R;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.DecimalFormat;
 
@@ -23,11 +27,13 @@ import retrofit2.Response;
 
 public class Detail extends AppCompatActivity {
 
-    private String xKode, xNama, xSatuan, xHarga, xStok, xTerjual;
-    private TextView tvKode, tvNama, tvSatuan, tvHarga, tvStok, count, tvTotal, tvTerjual;
-    private String yKode, yNama, ySatuan, yHarga, yStok, yTerjual;
+    private String xKode, xNama, xSatuan, xHarga, xStok, xTerjual, xKey;
+    private TextView tvKode, tvNama, tvSatuan, tvHarga, tvStok, count, tvTotal, tvTerjual, tvKey;
+    private String yKode, yNama, ySatuan, yHarga, yStok, yTerjual, yKey;
     private EditText etNamaPelanggan, etAlamatPelanggan;
     private Button btn_minus, btn_plus, btn_beli;
+    private DatabaseReference dbr;
+    private ModelBarang modelBarang;
     int sisaStokInt;
     int jumlah=0;
     int priceView=0;
@@ -41,6 +47,7 @@ public class Detail extends AppCompatActivity {
         etAlamatPelanggan = findViewById(R.id.alamatPelangganEditText);
 
         Intent terima = getIntent();
+        xKey = terima.getStringExtra("xKey");
         xKode = terima.getStringExtra("xKode");
         xNama = terima.getStringExtra("xNama");
         xSatuan = terima.getStringExtra("xSatuan");
@@ -48,6 +55,9 @@ public class Detail extends AppCompatActivity {
         xStok = terima.getStringExtra("xStok");
         xTerjual = terima.getStringExtra("xTerjual");
 
+        modelBarang = new ModelBarang();
+        dbr = FirebaseDatabase.getInstance().getReference();
+        tvKey = findViewById(R.id.tv_key);
         tvKode = findViewById(R.id.tv_kode);
         tvNama = findViewById(R.id.tv_nama);
         tvSatuan = findViewById(R.id.tv_satuan);
@@ -60,6 +70,7 @@ public class Detail extends AppCompatActivity {
         btn_minus = findViewById(R.id.btn_minus);
         btn_beli = findViewById(R.id.btn_beli);
 
+        tvKey.setText(xKey);
         tvKode.setText(xKode);
         tvNama.setText(xNama);
         tvSatuan.setText(xSatuan);
@@ -101,12 +112,32 @@ public class Detail extends AppCompatActivity {
         btn_beli.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                yKey = tvKey.getText().toString();
                 yKode = tvKode.getText().toString();
                 yNama = tvNama.getText().toString();
                 ySatuan = tvSatuan.getText().toString();
                 yHarga = tvHarga.getText().toString();
                 yStok = tvStok.getText().toString();
                 yTerjual = String.valueOf(Integer.valueOf(tvTerjual.getText().toString())+Integer.valueOf(count.getText().toString()));
+
+                // update firebase
+                modelBarang.setKode(yKode);
+                modelBarang.setNama(yNama);
+                modelBarang.setSatuan(ySatuan);
+                modelBarang.setHarga(yHarga);
+                modelBarang.setStok(yStok);
+                modelBarang.setTerjual(yTerjual);
+
+                dbr.child("barang")
+                        .child(yKey)
+                        .setValue(modelBarang)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Toast.makeText(Detail.this, "Update Sukses", Toast.LENGTH_SHORT).show();
+                                finish();
+                            }
+                        });
 
                 updateData();
 

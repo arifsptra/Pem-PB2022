@@ -19,11 +19,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.finalproject.API.APIRequestData;
 import com.example.finalproject.API.RetrofitServer;
 import com.example.finalproject.Activity.Detail;
+import com.example.finalproject.Activity.Master;
 import com.example.finalproject.Activity.Transaksi;
 import com.example.finalproject.Activity.Update;
 import com.example.finalproject.Model.DataModelBarang;
 import com.example.finalproject.Model.ResponseModelBarang;
 import com.example.finalproject.R;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +41,7 @@ public class AdapterMaster extends RecyclerView.Adapter<AdapterMaster.HolderData
     private List<DataModelBarang> listModel;
     private List<DataModelBarang> listBarang;
     private String idBarang;
+    private DatabaseReference dbr = FirebaseDatabase.getInstance().getReference();
 
     public AdapterMaster(Context context, List<DataModelBarang> listModel) {
         this.context = context;
@@ -53,8 +58,9 @@ public class AdapterMaster extends RecyclerView.Adapter<AdapterMaster.HolderData
 
     @Override
     public void onBindViewHolder(@NonNull HolderData holder, @SuppressLint("RecyclerView") int position) {
-        DataModelBarang dm = listModel.get(position);
+        final DataModelBarang dm = listModel.get(position);
 
+        holder.tvKey.setText(dm.getKey());
         holder.tvKode.setText(dm.getKode());
         holder.tvNama.setText(dm.getNama());
         holder.tvSatuan.setText(dm.getSatuan());
@@ -73,9 +79,31 @@ public class AdapterMaster extends RecyclerView.Adapter<AdapterMaster.HolderData
                 dialogPesan.setPositiveButton("Hapus", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        deleteData();
-                        dialog.dismiss();
-                        ((Transaksi) context).tampilData();
+                        AlertDialog.Builder konfirmasi = new AlertDialog.Builder(context);
+                        konfirmasi.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // delete data di firebase
+                                dbr.child("barang")
+                                        .child(holder.tvKey.getText().toString())
+                                        .removeValue()
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void unused) {
+                                                Toast.makeText(context, "Hapus Berhasil", Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+                                // delete data di database mysql
+                                deleteData();
+                                dialog.dismiss();
+                                ((Master) context).tampilData();
+                            }
+                        }).setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        }).setMessage("Apakah yakin ingin menghapus data?");
+                        konfirmasi.show();
                     }
                 });
 
@@ -98,10 +126,10 @@ public class AdapterMaster extends RecyclerView.Adapter<AdapterMaster.HolderData
                 hapusData.enqueue(new Callback<ResponseModelBarang>() {
                     @Override
                     public void onResponse(Call<ResponseModelBarang> call, Response<ResponseModelBarang> response) {
-                        String kode = response.body().getKode();
-                        String pesan = response.body().getPesan();
+//                        String kode = response.body().getKode();
+//                        String pesan = response.body().getPesan();
 
-                        Toast.makeText(context, "Kode: "+kode+" | Pesan: "+pesan, Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(context, "Kode: "+kode+" | Pesan: "+pesan, Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -123,6 +151,7 @@ public class AdapterMaster extends RecyclerView.Adapter<AdapterMaster.HolderData
 
                         listBarang = response.body().getData();
 
+                        String varKey = listBarang.get(0).getKey();
                         String varKodeBarang = listBarang.get(0).getKode();
                         String varNamaBarang = listBarang.get(0).getNama();
                         String varSatuanBarang = listBarang.get(0).getSatuan();
@@ -131,6 +160,7 @@ public class AdapterMaster extends RecyclerView.Adapter<AdapterMaster.HolderData
                         String varTerjual = listBarang.get(0).getTerjual();
 
                         Intent kirim = new Intent(context, Update.class);
+                        kirim.putExtra("xKey", varKey);
                         kirim.putExtra("xKode", varKodeBarang);
                         kirim.putExtra("xNama", varNamaBarang);
                         kirim.putExtra("xSatuan", varSatuanBarang);
@@ -157,13 +187,14 @@ public class AdapterMaster extends RecyclerView.Adapter<AdapterMaster.HolderData
     }
 
     public class HolderData extends RecyclerView.ViewHolder {
-        TextView tvKode, tvNama, tvSatuan, tvHarga, tvStok, tvTerjual;
+        TextView tvKode, tvNama, tvSatuan, tvHarga, tvStok, tvTerjual, tvKey;
         ImageView ivGambar;
         LinearLayout listLayout;
 
         public HolderData(@NonNull View v) {
             super(v);
 
+            tvKey = v.findViewById(R.id.tv_key);
             ivGambar = v.findViewById(R.id.iv_barang);
             listLayout = v.findViewById(R.id.list_item);
             tvKode = v.findViewById(R.id.tv_kode);

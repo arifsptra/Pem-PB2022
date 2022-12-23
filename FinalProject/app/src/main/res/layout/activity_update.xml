@@ -12,7 +12,7 @@
         android:id="@+id/tv_judul"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tambah Data Barang"
+        android:text="Edit Data Barang"
         android:textAlignment="center"
         android:textSize="22sp"
         android:textStyle="bold"
@@ -56,4 +56,10 @@
         android:layout_height="wrap_content"
         android:text="UBAH"
         android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/tv_key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="papos"/>
 </LinearLayout>

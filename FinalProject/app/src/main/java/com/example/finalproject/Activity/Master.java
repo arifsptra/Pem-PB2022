@@ -1,5 +1,6 @@
 package com.example.finalproject.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,9 +19,15 @@ import com.example.finalproject.API.RetrofitServer;
 import com.example.finalproject.Adapter.AdapterBarang;
 import com.example.finalproject.Adapter.AdapterMaster;
 import com.example.finalproject.Model.DataModelBarang;
+import com.example.finalproject.Model.ModelBarang;
 import com.example.finalproject.Model.ResponseModelBarang;
 import com.example.finalproject.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
@@ -37,6 +44,8 @@ public class Master extends AppCompatActivity {
     private SwipeRefreshLayout srlData;
     private ProgressBar pbData;
     FloatingActionButton fabTambah;
+    private DatabaseReference dbr;
+    private DataModelBarang modelBarang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +58,7 @@ public class Master extends AppCompatActivity {
         lmData = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         rvData.setLayoutManager(lmData);
         fabTambah = findViewById(R.id.fab_tambah);
+        dbr = FirebaseDatabase.getInstance().getReference();
 
         srlData.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
