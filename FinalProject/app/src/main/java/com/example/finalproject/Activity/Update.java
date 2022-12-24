@@ -13,6 +13,7 @@ import android.window.SplashScreen;
 
 import com.example.finalproject.API.APIRequestData;
 import com.example.finalproject.API.RetrofitServer;
+import com.example.finalproject.Model.DataModelBarang;
 import com.example.finalproject.Model.ModelBarang;
 import com.example.finalproject.Model.ResponseModelBarang;
 import com.example.finalproject.R;
@@ -30,9 +31,9 @@ public class Update extends AppCompatActivity {
     private EditText etKode, etNama, etSatuan, etHarga, etStok;
     private TextView tvKey;
     private Button bUbah;
-    private String yKode, yNama, ySatuan, yHarga, yStok, yTerjual;
+    private String yKode, yNama, ySatuan, yHarga, yStok, yTerjual, yKey;
     private DatabaseReference dbr;
-    private ModelBarang modelBarang;
+    private DataModelBarang modelBarang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,7 @@ public class Update extends AppCompatActivity {
         etHarga = findViewById(R.id.et_harga);
         etStok = findViewById(R.id.et_stok);
         bUbah = findViewById(R.id.b_ubah);
-        modelBarang = new ModelBarang();
+        modelBarang = new DataModelBarang();
         dbr = FirebaseDatabase.getInstance().getReference();
 
         tvKey.setText(xKey);

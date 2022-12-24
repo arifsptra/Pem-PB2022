@@ -40,7 +40,7 @@ public class AdapterMaster extends RecyclerView.Adapter<AdapterMaster.HolderData
     private Context context;
     private List<DataModelBarang> listModel;
     private List<DataModelBarang> listBarang;
-    private String idBarang;
+    private String idBarang, keyBarang;
     private DatabaseReference dbr = FirebaseDatabase.getInstance().getReference();
 
     public AdapterMaster(Context context, List<DataModelBarang> listModel) {
@@ -75,6 +75,7 @@ public class AdapterMaster extends RecyclerView.Adapter<AdapterMaster.HolderData
                 dialogPesan.setCancelable(true);
 
                 idBarang = holder.tvKode.getText().toString();
+                keyBarang = holder.tvKey.getText().toString();
 
                 dialogPesan.setPositiveButton("Hapus", new DialogInterface.OnClickListener() {
                     @Override
@@ -83,17 +84,6 @@ public class AdapterMaster extends RecyclerView.Adapter<AdapterMaster.HolderData
                         konfirmasi.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                // delete data di firebase
-                                dbr.child("barang")
-                                        .child(holder.tvKey.getText().toString())
-                                        .removeValue()
-                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                            @Override
-                                            public void onSuccess(Void unused) {
-                                                Toast.makeText(context, "Hapus Berhasil", Toast.LENGTH_SHORT).show();
-                                            }
-                                        });
-                                // delete data di database mysql
                                 deleteData();
                                 dialog.dismiss();
                                 ((Master) context).tampilData();
@@ -120,6 +110,18 @@ public class AdapterMaster extends RecyclerView.Adapter<AdapterMaster.HolderData
             }
 
             private void deleteData(){
+                // delete for firebase
+                dbr.child("barang")
+                        .child(keyBarang)
+                        .removeValue()
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Toast.makeText(context, "Hapus Berhasil", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+                // delete for mysql
                 APIRequestData ardData = RetrofitServer.konekRetrofit().create(APIRequestData.class);
                 Call<ResponseModelBarang> hapusData = ardData.ardHapusData(idBarang);
 

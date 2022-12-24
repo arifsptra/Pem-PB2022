@@ -9,6 +9,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -29,6 +30,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -46,6 +48,7 @@ public class Master extends AppCompatActivity {
     FloatingActionButton fabTambah;
     private DatabaseReference dbr;
     private DataModelBarang modelBarang;
+    private ArrayList<DataModelBarang> modelBarangArray = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +87,23 @@ public class Master extends AppCompatActivity {
     }
 
     public void tampilData(){
+        dbr.child("barang");
+        dbr.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    DataModelBarang modelBarang = dataSnapshot.getValue(DataModelBarang.class);
+                    modelBarang.setKey(dataSnapshot.getKey());
+                    modelBarangArray.add(modelBarang);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         APIRequestData ardData = RetrofitServer.konekRetrofit().create(APIRequestData.class);
         Call<ResponseModelBarang> tampil = ardData.ardTampilData();
 
